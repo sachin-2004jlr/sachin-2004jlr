@@ -1,9 +1,9 @@
 <div align="center">
 
 <!-- ══════════ SPARKLING GOLD × JET BLACK HEADER ══════════ -->
-<img src="https://capsule-render.vercel.app/api?type=venom&height=250&color=0:000000,20:0d0a00,50:FFD700,80:0d0a00,100:000000&text=SACHIN%20S&fontSize=80&fontColor=FFD700&animation=twinkling&desc=AI%20ENGINEER%20•%20FULL-STACK%20DEVELOPER&descSize=16&descAlignY=75" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&height=220&color=0:000000,35:1a1400,50:FFD700,65:1a1400,100:000000&text=SACHIN%20S&fontSize=75&fontColor=FFD700&animation=twinkling&fontAlignY=35&desc=AI%20ENGINEER%20%7C%20FULL-STACK%20DEVELOPER&descSize=16&descAlignY=58" width="100%"/>
 
-<img src="https://readme-typing-svg.demolab.com?font=Cinzel&weight=700&size=26&duration=3500&pause=1000&color=FFD700&background=00000000&center=true&vCenter=true&width=800&lines=✦+AI+Engineer+%26+Full-Stack+Developer+✦;RAG+Pipelines+•+Semantic+Search+•+LLM+Integration;React+•+Flask+•+MongoDB+•+Pinecone+•+OpenAI;✦+Building+Intelligent+Applications+✦" alt="Typing SVG"/>
+<img src="https://readme-typing-svg.demolab.com/?font=Cinzel&weight=700&size=26&duration=3500&pause=1000&color=FFD700&center=true&vCenter=true&width=800&lines=AI+Engineer+%26+Full-Stack+Developer;RAG+Pipelines+%7C+Semantic+Search+%7C+LLM+Integration;React+%7C+Flask+%7C+MongoDB+%7C+Pinecone+%7C+OpenAI;Building+Intelligent+Applications" alt="Typing SVG"/>
 
 <br/><br/>
 
@@ -21,17 +21,43 @@
 
 ## ✦ About Me
 
-```python
-class Sachin:
-    focus     = ["Generative AI", "RAG Pipelines", "Semantic Search", "Full-Stack Development"]
-    stack     = ["Python", "JavaScript", "React", "Flask", "MongoDB"]
-    ai_tools  = ["LangChain", "LangGraph", "Pinecone", "OpenAI API", "TensorFlow", "PyTorch", "OpenCV"]
-    contact   = "sachin2004jlr@gmail.com"
-```
+<div align="center">
 
-- ✦ Building **AI-powered applications** — semantic search systems, profile matching, resume parsing & ATS scoring
-- ✦ Working across the **GenAI stack** — RAG pipelines, vector embeddings, LLM integration & prompt engineering
-- ✦ Developing **full-stack platforms** — JWT auth, role-based access control & real-time messaging with Socket.IO
+**AI Engineer & Full-Stack Developer** crafting intelligent applications where GenAI meets production-grade engineering.
+
+</div>
+
+<table>
+<tr>
+<td align="center" width="33%">
+
+**🧠 GenAI & RAG**
+
+Semantic search, vector embeddings, LLM integration & prompt engineering with LangChain, LangGraph, Pinecone & OpenAI
+
+</td>
+<td align="center" width="33%">
+
+**⚡ Full-Stack Systems**
+
+React + Flask + MongoDB platforms with JWT auth, role-based access & real-time messaging via Socket.IO
+
+</td>
+<td align="center" width="33%">
+
+**🤖 Machine Learning**
+
+NLP, computer vision & forecasting with TensorFlow, PyTorch, OpenCV & Scikit-learn
+
+</td>
+</tr>
+</table>
+
+<div align="center">
+
+📫 **sachin2004jlr@gmail.com**
+
+</div>
 
 <img src="https://capsule-render.vercel.app/api?type=rect&height=3&color=0:000000,30:FFD700,50:FFF8DC,70:FFD700,100:000000" width="100%"/>
 
@@ -42,34 +68,49 @@ class Sachin:
 ### Languages & Frameworks
 <img src="https://skillicons.dev/icons?i=python,javascript,react,flask,html,css&theme=dark" />
 
-### AI / ML / GenAI
+<br/><br/>
+
+<img src="https://img.shields.io/badge/Axios-000000?style=for-the-badge&logo=axios&logoColor=FFD700"/>
+<img src="https://img.shields.io/badge/Flask--SocketIO-FFD700?style=for-the-badge&logoColor=black"/>
+
+### AI & Data Tools
 <img src="https://skillicons.dev/icons?i=tensorflow,pytorch,sklearn,opencv&theme=dark" />
 
-<br/>
+<br/><br/>
 
 <img src="https://img.shields.io/badge/LangChain-000000?style=for-the-badge&logoColor=FFD700"/>
 <img src="https://img.shields.io/badge/LangGraph-000000?style=for-the-badge&logoColor=FFD700"/>
 <img src="https://img.shields.io/badge/OpenAI_API-000000?style=for-the-badge&logo=openai&logoColor=FFD700"/>
 <img src="https://img.shields.io/badge/Pinecone-000000?style=for-the-badge&logoColor=FFD700"/>
-<img src="https://img.shields.io/badge/RAG_Pipelines-FFD700?style=for-the-badge&logoColor=black"/>
+<img src="https://img.shields.io/badge/Vector_DB-FFD700?style=for-the-badge&logoColor=black"/>
 <img src="https://img.shields.io/badge/Vector_Embeddings-FFD700?style=for-the-badge&logoColor=black"/>
-<img src="https://img.shields.io/badge/Prompt_Engineering-FFD700?style=for-the-badge&logoColor=black"/>
-<img src="https://img.shields.io/badge/NLP-000000?style=for-the-badge&logoColor=FFD700"/>
+<img src="https://img.shields.io/badge/RAG_Pipelines-FFD700?style=for-the-badge&logoColor=black"/>
+<img src="https://img.shields.io/badge/Semantic_Search-FFD700?style=for-the-badge&logoColor=black"/>
+<img src="https://img.shields.io/badge/LLM_Integration-000000?style=for-the-badge&logoColor=FFD700"/>
+<img src="https://img.shields.io/badge/Prompt_Engineering-000000?style=for-the-badge&logoColor=FFD700"/>
+<img src="https://img.shields.io/badge/Fine_Tuning-000000?style=for-the-badge&logoColor=FFD700"/>
+<img src="https://img.shields.io/badge/Neural_Networks-FFD700?style=for-the-badge&logoColor=black"/>
+<img src="https://img.shields.io/badge/NLP-FFD700?style=for-the-badge&logoColor=black"/>
 <img src="https://img.shields.io/badge/Keras-000000?style=for-the-badge&logo=keras&logoColor=FFD700"/>
 <img src="https://img.shields.io/badge/Pandas-000000?style=for-the-badge&logo=pandas&logoColor=FFD700"/>
 <img src="https://img.shields.io/badge/NumPy-000000?style=for-the-badge&logo=numpy&logoColor=FFD700"/>
 
-### Cloud, DevOps & Databases
-<img src="https://skillicons.dev/icons?i=aws,docker,kubernetes,mongodb,mysql,git,github&theme=dark" />
+### Tools & Technologies
+<img src="https://skillicons.dev/icons?i=mongodb,mysql,aws,docker,kubernetes,git,github&theme=dark" />
 
-<br/>
+<br/><br/>
 
+<img src="https://img.shields.io/badge/GridFS-000000?style=for-the-badge&logoColor=FFD700"/>
+<img src="https://img.shields.io/badge/PyMongo-000000?style=for-the-badge&logoColor=FFD700"/>
+<img src="https://img.shields.io/badge/SQL-FFD700?style=for-the-badge&logoColor=black"/>
 <img src="https://img.shields.io/badge/Snowflake-000000?style=for-the-badge&logo=snowflake&logoColor=FFD700"/>
-<img src="https://img.shields.io/badge/Socket.IO-000000?style=for-the-badge&logo=socketdotio&logoColor=FFD700"/>
 <img src="https://img.shields.io/badge/JWT_Auth-000000?style=for-the-badge&logo=jsonwebtokens&logoColor=FFD700"/>
+<img src="https://img.shields.io/badge/WebSockets_/_Socket.IO-000000?style=for-the-badge&logo=socketdotio&logoColor=FFD700"/>
 <img src="https://img.shields.io/badge/REST_APIs-FFD700?style=for-the-badge&logoColor=black"/>
+<img src="https://img.shields.io/badge/Tunneling-FFD700?style=for-the-badge&logoColor=black"/>
 <img src="https://img.shields.io/badge/Power_BI-000000?style=for-the-badge&logo=powerbi&logoColor=FFD700"/>
 <img src="https://img.shields.io/badge/Tableau-000000?style=for-the-badge&logo=tableau&logoColor=FFD700"/>
+<img src="https://img.shields.io/badge/Excel-000000?style=for-the-badge&logo=googlesheets&logoColor=FFD700"/>
 
 </div>
 
@@ -140,7 +181,7 @@ Full-stack platform with semantic profile search, AI candidate matching, resume 
 
 <div align="center">
 
-<img src="https://github-readme-stats.vercel.app/api?username=sachin-2004jlr&show_icons=true&hide_border=true&bg_color=000000&title_color=FFD700&icon_color=FFD700&text_color=E6C200&ring_color=FFD700&count_private=true" height="170" alt="GitHub Stats"/>
+<img src="https://github-readme-stats.vercel.app/api?username=sachin-2004jlr&show_icons=true&hide_border=true&bg_color=000000&title_color=FFD700&icon_color=FFD700&text_color=E6C200&ring_color=FFD700" height="170" alt="GitHub Stats"/>
 <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=sachin-2004jlr&layout=compact&hide_border=true&bg_color=000000&title_color=FFD700&text_color=E6C200" height="170" alt="Top Languages"/>
 
 <br/><br/>
@@ -164,6 +205,6 @@ Full-stack platform with semantic profile search, AI candidate matching, resume 
 <a href="mailto:sachin2004jlr@gmail.com"><img src="https://img.shields.io/badge/✦_Get_In_Touch-000000?style=for-the-badge&logo=gmail&logoColor=FFD700"/></a>
 
 <!-- ══════════ SPARKLING FOOTER ══════════ -->
-<img src="https://capsule-render.vercel.app/api?type=venom&height=150&color=0:000000,20:0d0a00,50:FFD700,80:0d0a00,100:000000&section=footer&animation=twinkling" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&height=130&color=0:000000,35:1a1400,50:FFD700,65:1a1400,100:000000&section=footer&animation=twinkling" width="100%"/>
 
 </div>
