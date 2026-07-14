@@ -21,15 +21,13 @@
 
 ## ✦ About Me
 
-```python
-class SachinS:
-    role     = "AI Engineer & Full-Stack Developer"
-    focus    = ["RAG Pipelines", "Semantic Search", "LLM Agents", "Prompt Engineering"]
-    stack    = ["React", "Flask", "MongoDB", "Pinecone", "OpenAI", "Claude Code"]
-    building = "AI Talent Matching Platform 🚀"
-    mantra   = "Ship intelligent systems, not just models."
-    contact  = "sachin2004jlr@gmail.com"
-```
+<div align="center">
+
+**AI Engineer & Full-Stack Developer** crafting intelligent applications where GenAI meets production-grade engineering.
+
+*Currently building an AI Talent Matching Platform 🚀*
+
+</div>
 
 <table>
 <tr>
@@ -57,22 +55,11 @@ NLP, computer vision & forecasting with TensorFlow, PyTorch, OpenCV & Scikit-lea
 </tr>
 </table>
 
-<img src="https://capsule-render.vercel.app/api?type=rect&height=3&color=0:0B1216,30:296589,50:DADCDE,70:296589,100:0B1216" width="100%"/>
+<div align="center">
 
-## ✦ How I Build RAG Systems
+📫 **sachin2004jlr@gmail.com**
 
-```mermaid
-%%{init: {'theme':'base','themeVariables':{'primaryColor':'#183847','primaryTextColor':'#DADCDE','primaryBorderColor':'#296589','lineColor':'#296589','secondaryColor':'#214E63','tertiaryColor':'#0B1216','background':'#0B1216','mainBkg':'#183847','edgeLabelBackground':'#0B1216','fontFamily':'monospace'}}}%%
-flowchart LR
-    A["📄 Documents"] --> B["✂️ Chunking"]
-    B --> C["🧬 Embeddings"]
-    C --> D[("🌲 Pinecone")]
-    Q["❓ User Query"] --> E["🧬 Query Embedding"]
-    E --> D
-    D --> F["🔍 Top-K Retrieval"]
-    F --> G["🧠 LLM + Prompt"]
-    G --> H["✨ Grounded Answer"]
-```
+</div>
 
 <img src="https://capsule-render.vercel.app/api?type=rect&height=3&color=0:0B1216,30:296589,50:DADCDE,70:296589,100:0B1216" width="100%"/>
 
