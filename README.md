@@ -6,7 +6,7 @@
 
 <!-- ══════════ ANIMATED TYPING — GOLD ══════════ -->
 
-<img src="https://readme-typing-svg.demolab.com/?font=Cinzel&weight=700&size=27&duration=3200&pause=900&color=C9A24B&center=true&vCenter=true&width=900&lines=AI+Engineer+%26+Full-Stack+Developer;RAG+Pipelines+%E2%80%A2+Semantic+Search+%E2%80%A2+LLM+Integration;React+%E2%80%A2+Flask+%E2%80%A2+MongoDB+%E2%80%A2+Pinecone+%E2%80%A2+OpenAI;Crafting+Intelligence+Into+Production+Systems+%E2%9C%A6" alt="Typing SV"/>
+<img src="https://readme-typing-svg.demolab.com/?font=Cinzel&weight=700&size=27&duration=3200&pause=900&color=C9A24B&center=true&vCenter=true&width=900&lines=AI+Engineer+%26+Full-Stack+Developer;RAG+Pipelines+%E2%80%A2+Semantic+Search+%E2%80%A2+LLM+Integration;React+%E2%80%A2+Flask+%E2%80%A2+MongoDB+%E2%80%A2+Pinecone+%E2%80%A2+OpenAI;Crafting+Intelligence+Into+Production+Systems+%E2%9C%A6" alt="Typing SVG"/>
 
 <br/><br/>
 
