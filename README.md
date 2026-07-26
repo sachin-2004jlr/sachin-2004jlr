@@ -63,25 +63,25 @@ currently: Building intelligent systems that scale
 <div align="center">
 
 <!-- STATS CARD — counts ALL commits, refreshes every 30 min -->
-<img height="180" src="https://github-readme-stats.vercel.app/api?username=YOUR_GITHUB_USERNAME&show_icons=true&include_all_commits=true&count_private=true&hide_border=false&border_color=3A2F1B&bg_color=050403&title_color=C9A24B&text_color=C8CCD2&icon_color=C9A24B&ring_color=C9A24B&cache_seconds=1800" />
+<img height="180" src="https://github-readme-stats.vercel.app/api?username=sachin-2004jlr&show_icons=true&include_all_commits=true&count_private=true&hide_border=false&border_color=3A2F1B&bg_color=050403&title_color=C9A24B&text_color=C8CCD2&icon_color=C9A24B&ring_color=C9A24B&cache_seconds=1800" />
 
 <!-- STREAK CARD — working demolab endpoint (Heroku one is DEAD) -->
-<img height="180" src="https://streak-stats.demolab.com?user=YOUR_GITHUB_USERNAME&background=050403&border=3A2F1B&ring=C9A24B&fire=C9A24B&currStreakLabel=C9A24B&currStreakNum=C8CCD2&sideLabels=C8CCD2&sideNums=C8CCD2&dates=8B8F96&stroke=3A2F1B" />
+<img height="180" src="https://streak-stats.demolab.com?user=sachin-2004jlr&background=050403&border=3A2F1B&ring=C9A24B&fire=C9A24B&currStreakLabel=C9A24B&currStreakNum=C8CCD2&sideLabels=C8CCD2&sideNums=C8CCD2&dates=8B8F96&stroke=3A2F1B" />
 
 <br/><br/>
 
 <!-- TOP LANGUAGES -->
-<img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=YOUR_GITHUB_USERNAME&layout=compact&langs_count=8&hide_border=false&border_color=3A2F1B&bg_color=050403&title_color=C9A24B&text_color=C8CCD2&cache_seconds=1800" />
+<img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=sachin-2004jlr&layout=compact&langs_count=8&hide_border=false&border_color=3A2F1B&bg_color=050403&title_color=C9A24B&text_color=C8CCD2&cache_seconds=1800" />
 
 <br/><br/>
 
-<!-- CONTRIBUTION ACTIVITY GRAPH -->
-<img width="95%" src="https://github-readme-activity-graph.vercel.app/graph?username=YOUR_GITHUB_USERNAME&bg_color=050403&color=C8CCD2&line=C9A24B&point=C8CCD2&area=true&area_color=3A2F1B&hide_border=false&border_color=3A2F1B&custom_title=Contribution%20Graph" />
+<!-- CONTRIBUTION HEATMAP (ghchart — stable, no rate limits) -->
+<img width="95%" src="https://ghchart.rshah.org/C9A24B/sachin-2004jlr" alt="Contribution Graph" />
 
 <br/><br/>
 
 <!-- TROPHIES -->
-<img width="95%" src="https://github-profile-trophy.vercel.app/?username=YOUR_GITHUB_USERNAME&theme=onestar&no-frame=true&no-bg=false&margin-w=8&column=7" />
+<img width="95%" src="https://github-profile-trophy.vercel.app/?username=sachin-2004jlr&theme=onestar&no-frame=true&no-bg=false&margin-w=8&column=7" />
 
 </div>
 
@@ -99,7 +99,7 @@ currently: Building intelligent systems that scale
 <br/><br/>
 
 <!-- PROFILE VIEWS COUNTER (auto-updates) -->
-<img src="https://komarev.com/ghpvc/?username=YOUR_GITHUB_USERNAME&style=for-the-badge&color=C9A24B&label=PROFILE+VIEWS" />
+<img src="https://komarev.com/ghpvc/?username=sachin-2004jlr&style=for-the-badge&color=C9A24B&label=PROFILE+VIEWS" />
 
 </div>
 
