@@ -20,7 +20,7 @@
 
 <!-- ══════════ SOCIAL BADGES — BLACK × GOLD × SILVER ══════════ -->
 
-<a href="https://www.linkedin.com/in/sachin-s-4a74b72a9/"><img src="https://img.shields.io/badge/LINKEDIN-0D0B07?style=for-the-badge&logo=linkedin&logoColor=C9A24B"/></a> <a href="mailto:sachin2004jlr@gmail.com"><img src="https://img.shields.io/badge/EMAIL-1C1A15?style=for-the-badge&logo=gmail&logoColor=C8CCD2"/></a> <a href="https://github.com/sachin-2004jlr?tab=followers"><img src="https://img.shields.io/github/followers/sachin-2004jlr?style=for-the-badge&logo=github&logoColor=C9A24B&color=0D0B07&labelColor=0D0B07&label=FOLLOW"/></a> <img src="https://komarev.com/ghpvc/?username=sachin-2004jlr&style=for-the-badge&color=C9A24B&label=VISITORS" alt="Profile Views"/>
+<a href="https://www.linkedin.com/in/sachin-s-4a74b72a9/"><img src="https://img.shields.io/badge/LINKEDIN-0D0B07?style=for-the-badge&logo=linkedin&logoColor=C9A24B"/></a> <a href="mailto:sachin2004jlr@gmail.com"><img src="https://img.shields.io/badge/EMAIL-1C1A15?style=for-the-badge&logo=gmail&logoColor=C8CCD2"/></a> <a href="https://github.com/sachin-2004jlr?tab=followers"><img src="https://img.shields.io/github/followers/sachin-2004jlr?style=for-the-badge&logo=github&logoColor=C9A24B&color=0D0B07&labelColor=0D0B07&label=FOLLOW"/></a> <img src="https://komarev.com/ghpvc/?username=sachin-2004jlr&style=for-the-badge&color=C9A24B&label=VISITORS" alt="Profile Views"/>
 
 </div>
 
@@ -28,15 +28,15 @@
 
 <img src="https://capsule-render.vercel.app/api?type=rect&height=4&color=0:050403,25:C9A24B,50:C8CCD2,75:C9A24B,100:050403" width="100%"/>
 
-✦ About Me
+## ✦ About Me
 
 <div align="center">
 
 AI Engineer & Full-Stack Developer — building intelligent applications where GenAI meets production-grade engineering.
 
-Currently building an AI Talent Matching Platform 🚀  •  Open to GenAI & full-stack collaborations
+Currently building an AI Talent Matching Platform 🚀  •  Open to GenAI & full-stack collaborations
 
-🌐 Explore my work → sachin-2004jlr.github.io/My-Portifolio
+🌐 Explore my work → [sachin-2004jlr.github.io/My-Portifolio](https://sachin-2004jlr.github.io/My-Portifolio/)
 
 </div>
 
@@ -44,21 +44,21 @@ Currently building an AI Talent Matching Platform 🚀  •  Open to GenAI & f
 <tr>
 <td align="center" width="33%">
 
-🧠 GenAI & RAG
+### 🧠 GenAI & RAG
 
 Semantic search, vector embeddings, LLM integration & prompt engineering with LangChain, LangGraph, Pinecone & OpenAI
 
 </td>
 <td align="center" width="33%">
 
-⚡ Full-Stack Systems
+### ⚡ Full-Stack Systems
 
 React + Flask + MongoDB platforms with JWT auth, role-based access & real-time messaging via Socket.IO
 
 </td>
 <td align="center" width="33%">
 
-🤖 Machine Learning
+### 🤖 Machine Learning
 
 NLP, computer vision & forecasting with TensorFlow, PyTorch, OpenCV & Scikit-learn
 
@@ -74,18 +74,18 @@ NLP, computer vision & forecasting with TensorFlow, PyTorch, OpenCV & Scikit-lea
 
 <img src="https://capsule-render.vercel.app/api?type=rect&height=4&color=0:050403,25:C9A24B,50:C8CCD2,75:C9A24B,100:050403" width="100%"/>
 
-✦ Tech Stack
+## ✦ Tech Stack
 
 <div align="center">
 
-◈ Languages & Frameworks
+### ◈ Languages & Frameworks
 
 <img src="https://skillicons.dev/icons?i=python,javascript,react,flask,html,css&theme=dark" />
 <br/><br/>
 <img src="https://img.shields.io/badge/Axios-0D0B07?style=for-the-badge&logo=axios&logoColor=C9A24B"/>
 <img src="https://img.shields.io/badge/Flask--SocketIO-C9A24B?style=for-the-badge&logoColor=0D0B07"/>
 
-◈ AI & Data Tools
+### ◈ AI & Data Tools
 
 <img src="https://skillicons.dev/icons?i=tensorflow,pytorch,sklearn,opencv&theme=dark" />
 <br/><br/>
@@ -108,7 +108,7 @@ NLP, computer vision & forecasting with TensorFlow, PyTorch, OpenCV & Scikit-lea
 <img src="https://img.shields.io/badge/Pandas-1C1A15?style=for-the-badge&logo=pandas&logoColor=C8CCD2"/>
 <img src="https://img.shields.io/badge/NumPy-0D0B07?style=for-the-badge&logo=numpy&logoColor=C9A24B"/>
 
-◈ Tools & Technologies
+### ◈ Tools & Technologies
 
 <img src="https://skillicons.dev/icons?i=mongodb,mysql,aws,docker,kubernetes,git,github&theme=dark" />
 <br/><br/>
@@ -128,11 +128,11 @@ NLP, computer vision & forecasting with TensorFlow, PyTorch, OpenCV & Scikit-lea
 
 <img src="https://capsule-render.vercel.app/api?type=rect&height=4&color=0:050403,25:C9A24B,50:C8CCD2,75:C9A24B,100:050403" width="100%"/>
 
-✦ Projects
+## ✦ Projects
 
 <div align="center">
 
-🌐 Live demos & case studies → sachin-2004jlr.github.io/My-Portifolio
+🌐 Live demos & case studies → [sachin-2004jlr.github.io/My-Portifolio](https://sachin-2004jlr.github.io/My-Portifolio/)
 
 </div>
 
@@ -140,7 +140,7 @@ NLP, computer vision & forecasting with TensorFlow, PyTorch, OpenCV & Scikit-lea
 <tr>
 <td width="50%" valign="top">
 
-✦ RAG Streamlit App
+### ✦ RAG Streamlit App
 
 <img src="https://img.shields.io/badge/Python-0D0B07?style=flat-square&logoColor=C9A24B"/> <img src="https://img.shields.io/badge/RAG-C9A24B?style=flat-square&logoColor=0D0B07"/> <img src="https://img.shields.io/github/stars/sachin-2004jlr/rag-streamlit-app?style=flat-square&color=C9A24B&labelColor=0D0B07"/>
 
@@ -149,7 +149,7 @@ Retrieval-Augmented Generation application built with Python & Streamlit — doc
 </td>
 <td width="50%" valign="top">
 
-✦ QA Bot
+### ✦ QA Bot
 
 <img src="https://img.shields.io/badge/Python-0D0B07?style=flat-square&logoColor=C9A24B"/> <img src="https://img.shields.io/github/stars/sachin-2004jlr/qa-bot?style=flat-square&color=C9A24B&labelColor=0D0B07"/>
 
@@ -160,7 +160,7 @@ Question-answering bot built in Python — natural-language queries answered wit
 <tr>
 <td width="50%" valign="top">
 
-✦ Face Detection
+### ✦ Face Detection
 
 <img src="https://img.shields.io/badge/Python-0D0B07?style=flat-square&logoColor=C9A24B"/> <img src="https://img.shields.io/badge/OpenCV-C9A24B?style=flat-square&logoColor=0D0B07"/> <img src="https://img.shields.io/github/stars/sachin-2004jlr/FACE-DETECTION?style=flat-square&color=C9A24B&labelColor=0D0B07"/>
 
@@ -169,7 +169,7 @@ Real-time face detection using OpenCV & Haar Cascade classifiers — optimized f
 </td>
 <td width="50%" valign="top">
 
-✦ Stock Price Prediction — EDA
+### ✦ Stock Price Prediction — EDA
 
 <img src="https://img.shields.io/badge/Python-0D0B07?style=flat-square&logoColor=C9A24B"/> <img src="https://img.shields.io/badge/TensorFlow-C9A24B?style=flat-square&logoColor=0D0B07"/> <img src="https://img.shields.io/badge/LSTM-1C1A15?style=flat-square&logoColor=C8CCD2"/> <img src="https://img.shields.io/github/stars/sachin-2004jlr/stock-price-prediction-eda?style=flat-square&color=C9A24B&labelColor=0D0B07"/>
 
@@ -180,7 +180,7 @@ EDA of historical stock prices + LSTM forecasting — MinMax scaling, sliding-wi
 <tr>
 <td width="50%" valign="top">
 
-✦ Titanic Survival Prediction
+### ✦ Titanic Survival Prediction
 
 <img src="https://img.shields.io/badge/Python-0D0B07?style=flat-square&logoColor=C9A24B"/> <img src="https://img.shields.io/badge/Jupyter-C9A24B?style=flat-square&logoColor=0D0B07"/> <img src="https://img.shields.io/github/stars/sachin-2004jlr/Titanic_Survival_prediction?style=flat-square&color=C9A24B&labelColor=0D0B07"/>
 
@@ -189,7 +189,7 @@ ML classification on the Titanic dataset — feature engineering & model evaluat
 </td>
 <td width="50%" valign="top">
 
-✦ AI Talent Matching Platform 🚧 (Ongoing)
+### ✦ AI Talent Matching Platform 🚧 (Ongoing)
 
 <img src="https://img.shields.io/badge/React-0D0B07?style=flat-square&logoColor=C9A24B"/> <img src="https://img.shields.io/badge/Flask-C9A24B?style=flat-square&logoColor=0D0B07"/> <img src="https://img.shields.io/badge/OpenAI_+_Pinecone-1C1A15?style=flat-square&logoColor=C8CCD2"/>
 
@@ -201,7 +201,7 @@ Full-stack platform with semantic profile search, AI candidate matching, resume 
 
 <img src="https://capsule-render.vercel.app/api?type=rect&height=4&color=0:050403,25:C9A24B,50:C8CCD2,75:C9A24B,100:050403" width="100%"/>
 
-✦ Achievements
+## ✦ Achievements
 
 <div align="center">
 
@@ -213,24 +213,49 @@ Full-stack platform with semantic profile search, AI candidate matching, resume 
 
 <img src="https://capsule-render.vercel.app/api?type=rect&height=4&color=0:050403,25:C9A24B,50:C8CCD2,75:C9A24B,100:050403" width="100%"/>
 
-✦ GitHub Stats
+## ✦ GitHub Stats
 
 <div align="center">
 
-<!-- count_private=true + include_all_commits=true → counts commits from PRIVATE repos too -->
+<!--
+  ┌─────────────────────────────────────────────────────────────────────────┐
+  │  TOTAL CONTRIBUTIONS / STARS / etc.                                        │
+  │  • include_all_commits=true + count_private=true only reflect PRIVATE     │
+  │    repos when the card is served by an instance that has a token with     │
+  │    access to them. The PUBLIC vercel URL below CANNOT see your private    │
+  │    repos, so private work is excluded from these totals.                  │
+  │  • To include private repos, self-host github-readme-stats with your own  │
+  │    Personal Access Token (see the notes I sent alongside this file).      │
+  │  • The public instance caches for ~6 hours and GitHub re-caches the image │
+  │    on its own CDN, so numbers can lag several hours behind reality — this │
+  │    is normal, not a broken card.                                          │
+  └─────────────────────────────────────────────────────────────────────────┘
+-->
 
-<img src="https://github-readme-stats.vercel.app/api?username=sachin-2004jlr&show_icons=true&include_all_commits=true&count_private=true&hide_border=true&bg_color=0D0B07&title_color=C9A24B&icon_color=C9A24B&text_color=C8CCD2&ring_color=C9A24B&custom_title=✦%20Sachin's%20GitHub%20Statistics%20✦&rank_icon=github&cache_seconds=1800" height="180" alt="GitHub Stats"/>
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=sachin-2004jlr&layout=compact&langs_count=8&hide_border=true&bg_color=0D0B07&title_color=C9A24B&text_color=C8CCD2&custom_title=✦%20Most%20Used%20Languages%20✦&cache_seconds=1800" height="180" alt="Top Languages"/>
+<img src="https://github-readme-stats.vercel.app/api?username=sachin-2004jlr&show_icons=true&include_all_commits=true&count_private=true&hide_border=true&bg_color=0D0B07&title_color=C9A24B&icon_color=C9A24B&text_color=C8CCD2&ring_color=C9A24B&custom_title=✦%20Sachin's%20GitHub%20Statistics%20✦&rank_icon=github" height="180" alt="GitHub Stats"/>
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=sachin-2004jlr&layout=compact&langs_count=8&hide_border=true&bg_color=0D0B07&title_color=C9A24B&text_color=C8CCD2&custom_title=✦%20Most%20Used%20Languages%20✦" height="180" alt="Top Languages"/>
 
 <br/><br/>
 
-<!-- Streak — reads your public contribution calendar. Enable "Include private contributions" in GitHub settings so private commits count here too -->
+<!--
+  ┌─────────────────────────────────────────────────────────────────────────┐
+  │  CURRENT STREAK / LONGEST STREAK / TOTAL CONTRIBUTIONS                     │
+  │  For these to be correct you MUST enable, on your github.com profile:     │
+  │  → the "Contribution settings" dropdown above your contribution graph     │
+  │  → tick "Private contributions"                                           │
+  │  Without it, commits in private repos never enter the calendar this card  │
+  │  reads, so the streak resets/undercounts. The demolab server also goes    │
+  │  down periodically; if the card breaks often, self-host it or use the     │
+  │  GitHub Action version (see the notes I sent alongside this file).        │
+  └─────────────────────────────────────────────────────────────────────────┘
+-->
 
 <img src="https://streak-stats.demolab.com?user=sachin-2004jlr&mode=daily&hide_border=true&background=0D0B07&ring=C9A24B&fire=C9A24B&currStreakLabel=C9A24B&currStreakNum=C8CCD2&sideNums=C8CCD2&sideLabels=9C9C9C&dates=7A6A45&stroke=3A2F1B&border_radius=10" alt="GitHub Streak"/>
 
 <br/><br/>
 
 <!-- ══════════ 3D-STYLE CONTRIBUTION ACTIVITY GRAPH ══════════ -->
+<!-- Hosted Vercel service — same ~few-hour CDN cache as the cards above. -->
 
 <img src="https://github-readme-activity-graph.vercel.app/graph?username=sachin-2004jlr&custom_title=✦%20Contribution%20Activity%20✦&bg_color=0D0B07&color=C8CCD2&title_color=C9A24B&line=C9A24B&point=C8CCD2&area=true&area_color=3A2F1B&hide_border=true&radius=10" width="100%" alt="Contribution Graph"/>
 
@@ -238,11 +263,21 @@ Full-stack platform with semantic profile search, AI candidate matching, resume 
 
 <img src="https://capsule-render.vercel.app/api?type=rect&height=4&color=0:050403,25:C9A24B,50:C8CCD2,75:C9A24B,100:050403" width="100%"/>
 
-✦ Contribution Snake
+## ✦ Contribution Snake
 
 <div align="center">
 
-<!-- ══════════ GOLD SNAKE EATING CONTRIBUTIONS (auto-generated by GitHub Action) ══════════ -->
+<!--
+  ┌─────────────────────────────────────────────────────────────────────────┐
+  │  This image is NOT auto-generated by any external service. It only        │
+  │  updates when the GitHub Action in .github/workflows/snake.yml runs and   │
+  │  pushes fresh SVGs to the `output` branch of this repo.                    │
+  │  The two filenames below MUST match the `outputs:` in that workflow:       │
+  │      github-snake.svg  and  github-snake-dark.svg                          │
+  │  If the snake never moves, the workflow is missing / failing — add the     │
+  │  snake.yml file I sent alongside this README and run it once manually.     │
+  └─────────────────────────────────────────────────────────────────────────┘
+-->
 
 <picture>
 <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/sachin-2004jlr/sachin-2004jlr/output/github-snake-dark.svg"/>
@@ -261,7 +296,7 @@ Full-stack platform with semantic profile search, AI candidate matching, resume 
 
 <br/><br/>
 
-<a href="https://sachin-2004jlr.github.io/My-Portifolio/"><img src="https://img.shields.io/badge/✦_Visit_My_Portfolio-C9A24B?style=for-the-badge&logo=googlechrome&logoColor=0D0B07"/></a> <a href="https://www.linkedin.com/in/sachin-s-4a74b72a9/"><img src="https://img.shields.io/badge/✦_Let's_Connect-0D0B07?style=for-the-badge&logo=linkedin&logoColor=C9A24B"/></a> <a href="mailto:sachin2004jlr@gmail.com"><img src="https://img.shields.io/badge/✦_Get_In_Touch-1C1A15?style=for-the-badge&logo=gmail&logoColor=C8CCD2"/></a>
+<a href="https://sachin-2004jlr.github.io/My-Portifolio/"><img src="https://img.shields.io/badge/✦_Visit_My_Portfolio-C9A24B?style=for-the-badge&logo=googlechrome&logoColor=0D0B07"/></a> <a href="https://www.linkedin.com/in/sachin-s-4a74b72a9/"><img src="https://img.shields.io/badge/✦_Let's_Connect-0D0B07?style=for-the-badge&logo=linkedin&logoColor=C9A24B"/></a> <a href="mailto:sachin2004jlr@gmail.com"><img src="https://img.shields.io/badge/✦_Get_In_Touch-1C1A15?style=for-the-badge&logo=gmail&logoColor=C8CCD2"/></a>
 
 <!-- ══════════ MATTE GOLD × SILVER FOOTER ══════════ -->
 
