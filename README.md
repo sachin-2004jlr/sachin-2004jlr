@@ -1,5 +1,19 @@
-# Sachin Sathish
+<div align="center">
 
-AI & Data Science Engineer | AI/ML | RAG | Full Stack
+<h3>
+<code>sachin@github ~ $ ./contributions.sh</code>
+</h3>
 
-Building intelligent systems with Python, AI, and modern web technologies.
+<img src="./contrib-heatmap.svg" width="860"/>
+
+<br><br>
+
+<h3>
+<code>sachin@github ~ $ whoami</code>
+</h3>
+
+<p>
+AI & Data Science Engineer • Full Stack AI • RAG • LLMs
+</p>
+
+</div>
