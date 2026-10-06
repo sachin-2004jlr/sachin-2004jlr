@@ -20,22 +20,22 @@ FONT = (
 CHAR_RATIO = 0.6  # advance width of a monospace glyph, in em
 
 C = {
-    # Deep plum-black base with gold and glossy royal-purple accents.
-    "bg": "#0c0a12",
-    "card": "#130f1c",
-    "bar": "#17121f",
-    "border": "#2b2439",
-    "text": "#eeeaf5",
-    "soft": "#bcb4cc",
-    "muted": "#857c98",
-    "dim": "#40374f",
-    "accent": "#a47cf3",      # purple: prompts, bullets
-    "accent_hi": "#e8bb4f",   # gold: highlights, big numbers, roles
-    "accent_alt": "#8b5cf6",  # deep purple: gradient partner
-    "warm": "#d9a441",        # gold: commit hashes, field names
-    "info": "#c4b2f6",        # lavender: organisations, paths
-    "tag": "#b594f0",         # purple: tech tags
-    "key": "#e2b85c",         # gold: yaml keys
+    # Neon terminal: near-black base with GitHub-style syntax accents.
+    "bg": "#0a0d12",
+    "card": "#0d1117",
+    "bar": "#141920",
+    "border": "#262c36",
+    "text": "#e6edf3",
+    "soft": "#b1bac4",
+    "muted": "#7d8590",
+    "dim": "#484f58",
+    "accent": "#3fb950",      # green: prompts, bullets
+    "accent_hi": "#7ee787",   # bright green: highlights, big numbers, roles
+    "accent_alt": "#56d4dd",  # teal: gradient partner
+    "warm": "#e3b341",        # amber: commit hashes, field names
+    "info": "#79c0ff",        # blue: organisations, paths
+    "tag": "#d2a8ff",         # purple: tech tags
+    "key": "#ff7b72",         # red: yaml keys
 }
 
 BASE_CSS = f"""
@@ -178,9 +178,9 @@ def window(w, h, title, body, extra_css="", label=""):
   <rect width="{w}" height="{h}" fill="{C["bg"]}"/>
   <rect width="{w}" height="38" fill="{C["bar"]}"/>
   <rect y="38" width="{w}" height="1" fill="{C["border"]}"/>
-  <circle cx="22" cy="19" r="6" fill="#c9536b"/>
-  <circle cx="42" cy="19" r="6" fill="#d9a441"/>
-  <circle cx="62" cy="19" r="6" fill="#8b5cf6"/>
+  <circle cx="22" cy="19" r="6" fill="#ff5f57"/>
+  <circle cx="42" cy="19" r="6" fill="#febc2e"/>
+  <circle cx="62" cy="19" r="6" fill="#28c840"/>
   {text(w / 2 + 30, 24, title, 12, C["muted"], anchor="middle")}
 {body}
   <rect class="sweep" style="--h:{h + 60}px" y="0" width="{w}" height="60" fill="url(#beam)"/>
