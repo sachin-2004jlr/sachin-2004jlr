@@ -6,6 +6,7 @@
   "based": "Bengaluru, India",
   "status": "Open to opportunities",
   "statement": "I'm a Full Stack AI Engineer who builds intelligent, production-grade applications, from model to interface. My sweet spot is where Generative AI meets dependable engineering: semantic search, RAG, agents, and the unglamorous-but-essential auth, access control and rate limiting.",
+  "roles": ["Full Stack AI Engineer", "Generative AI Builder", "ML Engineer"],
   "focus": [
     "Generative AI · RAG · AI agents · MCP",
     "Hybrid retrieval, reranking & answer verification",

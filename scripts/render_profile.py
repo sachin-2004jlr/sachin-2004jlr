@@ -8,6 +8,8 @@ desktop and assets/<name>-mobile.svg for narrow screens.
 """
 
 import json
+import random
+import re
 import textwrap
 from pathlib import Path
 
@@ -28,6 +30,7 @@ GLYPHS = {
     "N": ["███╗   ██╗", "████╗  ██║", "██╔██╗ ██║", "██║╚██╗██║", "██║ ╚████║", "╚═╝  ╚═══╝"],
     " ": ["  "] * 6,
 }
+GLITCH = "01<>/|{}[]#$%&*+=?!"
 STROKES = {  # box-drawing glyph -> segments from the cell centre, in half-cells
     "═": [(-1, 0, 1, 0)], "║": [(0, -1, 0, 1)],
     "╗": [(-1, 0, 0, 0), (0, 0, 0, 1)], "╔": [(0, 0, 1, 0), (0, 0, 0, 1)],
@@ -77,6 +80,7 @@ def wrap(s, width):
 
 def portrait_svg(x, y, width):
     cols, rows, palette = PORTRAIT["cols"], PORTRAIT["rows"], PORTRAIT["palette"]
+    rng = random.Random(7)  # deterministic, so re-renders don't churn the diff
     step = width / cols / 0.6  # font size == line height keeps the 0.6 cell
     out = []
     for r, (line, shade) in enumerate(zip(PORTRAIT["lines"], PORTRAIT["shades"])):
@@ -89,7 +93,13 @@ def portrait_svg(x, y, width):
                                      round(step, 2), palette[int(shade[start], 36)],
                                      weight=700, squeeze=True))
                 start = c
-        out.append(f'<g class="decode" style="animation-delay:{0.15 + r * 0.022:.3f}s">{"".join(runs)}</g>')
+        delay = 0.15 + r * 0.022
+        # Scrambled glyphs flash in the same cells first, then the real row resolves.
+        noise = "".join(" " if ch == " " else rng.choice(GLITCH) for ch in line)
+        glitch = [text(x + m.start() * width / cols, y + (r + 1) * step, m.group(), round(step, 2),
+                       C["green"], weight=700, squeeze=True) for m in re.finditer(r"\S+", noise)]
+        out.append(f'<g class="scramble" style="animation-delay:{delay:.3f}s">{"".join(glitch)}</g>')
+        out.append(f'<g class="decode" style="animation-delay:{delay + 0.22:.3f}s">{"".join(runs)}</g>')
     return "".join(out), rows * step
 
 
@@ -100,6 +110,20 @@ def hud(x0, y0, x1, y1):
     label = f"subject: sachin_s · ascii {PORTRAIT['cols']}x{PORTRAIT['rows']} · bg removed"
     out.append(text(x0, y1 + 20, label, 11, C["muted"]))
     return fade(0.1, "".join(out))
+
+
+def roles_svg(x, y, start, size=13, slot=3.0):
+    """Cycle through PROFILE["roles"], typing each in and erasing it, forever."""
+    roles = PROFILE["roles"]
+    out = [fade(start, spans(x, y, [("~/roles ", C["muted"]), ("▸ ", C["green"])], size))]
+    rx = x + 10 * cw(size)
+    cycle = slot * len(roles)
+    for i, role in enumerate(roles):
+        box = f'<rect x="{rx:.1f}" y="{y - size:.1f}" width="{len(role) * cw(size):.1f}" height="{size * 1.3:.1f}" fill="none"/>'
+        style = (f"animation: role {cycle:.1f}s steps({len(role) * 2}, end) {start + i * slot:.2f}s infinite both")
+        cls = "role" if i == 0 else "role role-alt"
+        out.append(f'<g class="{cls}" style="{style}">{box}{text(rx, y, role, size, C["green_hi"], weight=700)}</g>')
+    return "".join(out)
 
 
 def hero(w):
@@ -138,6 +162,10 @@ def hero(w):
     parts.append(fade(t + 0.15, text(X, y, company, 12, C["muted"]), "rise"))
     t += 0.6
 
+    y += 26
+    parts.append(roles_svg(X, y, t))
+    t += 0.3
+
     y += 36
     cmd, t = command(X, y, "cat focus.txt", t)
     parts.append(cmd)
@@ -174,6 +202,18 @@ def hero(w):
     css = """
   .decode { animation: decode .5s steps(4) both; }
   @keyframes decode { 0% { opacity: 0; } 50% { opacity: .35; } 100% { opacity: 1; } }
+  .scramble { opacity: 0; animation: scramble .5s steps(3) both; }
+  @keyframes scramble { 0% { opacity: 0; } 30% { opacity: .85; } 100% { opacity: 0; } }
+  /* Each role owns one slot of the cycle: type in, hold, erase, stay hidden.
+     Overshooting to -100% sidesteps Chromium skipping a stepped animation's last frame. */
+  @keyframes role {
+    0%     { clip-path: inset(-30% 100% -30% 0); -webkit-clip-path: inset(-30% 100% -30% 0); }
+    9%     { clip-path: inset(-30% -100% -30% 0); -webkit-clip-path: inset(-30% -100% -30% 0); }
+    27%    { clip-path: inset(-30% -100% -30% 0); -webkit-clip-path: inset(-30% -100% -30% 0); }
+    33.3%  { clip-path: inset(-30% 100% -30% 0); -webkit-clip-path: inset(-30% 100% -30% 0); }
+    100%   { clip-path: inset(-30% 100% -30% 0); -webkit-clip-path: inset(-30% 100% -30% 0); }
+  }
+  @media (prefers-reduced-motion: reduce) { .role-alt { display: none; } }
 """
     return window(w, H, "sachin@budhhi: ~/portfolio — zsh", "".join(parts), css,
                   label=f"{PROFILE['name']}, {PROFILE['role']} at {PROFILE['company']}. Animated terminal with an ASCII portrait.")

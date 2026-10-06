@@ -80,17 +80,15 @@ def main():
     # Stretch tones inside the silhouette only, so the face gets the range
     # instead of the white shirt and the backdrop.
     body = lum_s[mask_s > 0.5]
-    lo, hi = np.percentile(body, 4), np.percentile(body, 80)
-    lum_s = np.clip((lum_s - lo) / (hi - lo), 0, 1) ** 0.8
+    lo, hi = np.percentile(body, 2), np.percentile(body, 97)
+    lum_s = np.clip((lum_s - lo) / (hi - lo), 0, 1) ** 1.1
     value = np.clip(0.1 + 0.9 * lum_s + 0.35 * edge_s, 0, 1)
     value *= np.clip(mask_s * 1.4, 0, 1)  # soften the silhouette edge
 
-    # Colour: hue from the photo, brightness from the tone-mapped value, so
-    # skin, hair and shirt separate while staying bright enough on black.
-    rgb_s = cv2.resize(rgb, size, interpolation=cv2.INTER_AREA).astype(np.float32)
-    hue = rgb_s / np.maximum(rgb_s.max(axis=2, keepdims=True), 1)
-    hue = 0.75 * hue + 0.25 * hue.mean(axis=2, keepdims=True)  # tame saturation
-    colour = hue * (0.22 + 0.78 * value[..., None]) * 255
+    # Black and white: grey level follows the tone-mapped value, with a floor
+    # so the darkest glyphs (hair, shadows) still read on the black panel.
+    grey = (0.16 + 0.84 * value ** 1.3) * 255
+    colour = np.repeat(grey[..., None], 3, axis=2)
 
     # Quantise to a small palette so each row collapses into few SVG runs.
     inside = mask_s >= MASK_CUTOFF
