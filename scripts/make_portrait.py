@@ -17,13 +17,13 @@ INPUT_FILE = Path("source/photo.jpg")
 OUTPUT_FILE = Path("data/portrait.json")
 MODEL_FILE = Path.home() / ".u2net" / "u2net_human_seg.onnx"
 
-COLS = 112
-ROWS = 70
+COLS = 136
+ROWS = 85
 CELL_ASPECT = 0.6 / 1.0  # glyph width / line height used by the hero panel
 
 # Sparse -> dense. Bright pixels get dense glyphs (light text on dark bg).
 RAMP = " .`':,;-~=+<icvxzjtfLJunoaeszyXUCQOZmwpqdbkhKA8%#B&WM@"
-PALETTE_SIZE = 14
+PALETTE_SIZE = 16
 DIGITS = "0123456789abcdefghijklmnopqrstuvwxyz"
 MASK_CUTOFF = 0.35
 
@@ -45,6 +45,25 @@ def remove_background(img):
     return cv2.resize(pred, img.size, interpolation=cv2.INTER_LINEAR)
 
 
+def find_face(rgb, alpha):
+    """Face box (x, y, w, h): the largest skin-toned blob in the upper body.
+
+    OpenCV 5 no longer ships Haar cascades, and skin tone inside the person
+    mask is plenty for a single, front-facing portrait.
+    """
+    ycrcb = cv2.cvtColor(rgb, cv2.COLOR_RGB2YCrCb)
+    skin = cv2.inRange(ycrcb, (0, 135, 85), (255, 175, 135))
+    skin[alpha < 0.5] = 0
+    skin[int(rgb.shape[0] * 0.6):] = 0  # face is in the upper part of the crop
+    skin = cv2.morphologyEx(skin, cv2.MORPH_OPEN, np.ones((9, 9), np.uint8))
+    count, _, stats, _ = cv2.connectedComponentsWithStats(skin)
+    if count < 2:
+        raise RuntimeError("No face found in the source photo.")
+    best = 1 + int(np.argmax(stats[1:, cv2.CC_STAT_AREA]))
+    x, y, w, h = stats[best, :4]
+    return int(x), int(y), int(w), int(h)
+
+
 def main():
     img = Image.open(INPUT_FILE).convert("RGB")
     alpha = remove_background(img)
@@ -53,17 +72,20 @@ def main():
     # Crop head-and-shoulders to the panel's aspect ratio.
     h, w = alpha.shape
     target = (COLS * CELL_ASPECT) / ROWS
-    x0, x1 = int(w * 0.08), int(w * 0.92)
+    x0, x1 = int(w * 0.12), int(w * 0.88)
     crop_h = int((x1 - x0) / target)
-    y0 = int(h * 0.035)
+    y0 = int(h * 0.03)
     y1 = min(h, y0 + crop_h)
     rgb = rgb[y0:y1, x0:x1]
     alpha = alpha[y0:y1, x0:x1]
 
-    # Local contrast on luminance so skin, eyes and shirt folds keep detail.
+    # Local contrast on luminance so skin, eyes and shirt folds keep detail,
+    # then an unsharp mask so features survive the downscale.
     lab = cv2.cvtColor(rgb, cv2.COLOR_RGB2LAB)
-    clahe = cv2.createCLAHE(clipLimit=3.2, tileGridSize=(6, 6))
+    clahe = cv2.createCLAHE(clipLimit=3.0, tileGridSize=(8, 8))
     lum = clahe.apply(lab[:, :, 0]).astype(np.float32) / 255.0
+    lum = np.clip(lum + 0.6 * (lum - cv2.GaussianBlur(lum, (0, 0), 3.0)), 0, 1)
+    face = find_face(rgb, alpha)
 
     # Edge map gives hair and facial contours structure where tone is flat.
     blur = cv2.GaussianBlur(lum, (0, 0), 2.0)
@@ -77,13 +99,24 @@ def main():
     edge_s = cv2.resize(edges, size, interpolation=cv2.INTER_AREA)
     mask_s = cv2.resize(alpha, size, interpolation=cv2.INTER_AREA)
 
-    # Stretch tones inside the silhouette only, so the face gets the range
-    # instead of the white shirt and the backdrop.
-    body = lum_s[mask_s > 0.5]
-    lo, hi = np.percentile(body, 2), np.percentile(body, 97)
-    lum_s = np.clip((lum_s - lo) / (hi - lo), 0, 1) ** 1.1
-    value = np.clip(0.1 + 0.9 * lum_s + 0.35 * edge_s, 0, 1)
+    # Expose for the face: its tones span the full range, everything brighter
+    # (the white shirt) simply saturates and is faded below.
+    sy, sx = ROWS / rgb.shape[0], COLS / rgb.shape[1]
+    fx, fy, fw, fh = face
+    print(f"face box: x={fx} y={fy} w={fw} h={fh} (crop {rgb.shape[1]}x{rgb.shape[0]})")
+    fx0, fx1 = int(fx * sx), int((fx + fw) * sx)
+    fy0, fy1 = int(fy * sy), int((fy + fh) * sy)
+    region = lum_s[fy0:fy1, fx0:fx1]
+    lo, hi = np.percentile(region, 3), np.percentile(region, 99)
+    lum_s = np.clip((lum_s - lo) / (hi - lo), 0, 1)
+    value = np.clip(0.08 + 0.92 * lum_s + 0.3 * edge_s, 0, 1)
     value *= np.clip(mask_s * 1.4, 0, 1)  # soften the silhouette edge
+
+    # Cinematic fade: from just below the chin, the body dims toward the
+    # bottom so the face stays the focal point.
+    rows = np.arange(ROWS)[:, None]
+    start = fy1 + (fy1 - fy0) * 0.25
+    value *= 1 - 0.42 * np.clip((rows - start) / max(ROWS - start, 1), 0, 1)
 
     # Black and white: grey level follows the tone-mapped value, with a floor
     # so the darkest glyphs (hair, shadows) still read on the black panel.

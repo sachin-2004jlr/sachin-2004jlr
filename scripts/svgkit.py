@@ -202,7 +202,9 @@ def stamp_readme(paths):
     text = README.read_text(encoding="utf-8")
     for path in paths:
         name = Path(path).as_posix()
-        digest = hashlib.sha1(Path(path).read_bytes()).hexdigest()[:10]
+        # Normalise line endings so Windows checkouts hash like CI does.
+        data = Path(path).read_bytes().replace(b"\r\n", b"\n")
+        digest = hashlib.sha1(data).hexdigest()[:10]
         pattern = r"(?:" + re.escape(RAW) + r")?" + re.escape(name) + r"(?:\?v=[0-9a-f]+)?"
         text = re.sub(pattern, f"{RAW}{name}?v={digest}", text)
     README.write_bytes(text.encode("utf-8"))
