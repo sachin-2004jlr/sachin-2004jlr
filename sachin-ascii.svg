@@ -1,0 +1,292 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+    width="860"
+    height="620"
+    viewBox="0 0 860 620"
+    role="img"
+    aria-label="Animated ASCII portrait of Sachin">
+
+  <defs>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="1.4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <linearGradient id="terminalText" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f0f6fc"/>
+      <stop offset="55%" stop-color="#c9d1d9"/>
+      <stop offset="100%" stop-color="#8b949e"/>
+    </linearGradient>
+
+    <linearGradient id="scan" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#ffffff" stop-opacity=".12"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+
+    <style>
+      .ascii {
+        font-family: "Courier New", "Liberation Mono", monospace;
+        font-size: 9px;
+        font-weight: 700;
+        letter-spacing: 0.35px;
+        fill: url(#terminalText);
+        filter: url(#glow);
+      }
+
+      .row {
+        opacity: 0;
+        animation: reveal 0.7s ease-out forwards;
+      }
+
+      @keyframes reveal {
+        0% {
+          opacity: 0;
+          transform: translateX(-12px);
+        }
+        65% {
+          opacity: 1;
+          transform: translateX(2px);
+        }
+        100% {
+          opacity: .94;
+          transform: translateX(0);
+        }
+      }
+
+      .scan {
+        animation: scan 4s ease-in-out infinite;
+      }
+
+      @keyframes scan {
+        0%, 100% { transform: translateY(0); opacity: 0; }
+        12% { opacity: .75; }
+        50% { opacity: .35; }
+        88% { opacity: .75; }
+        100% { transform: translateY(500px); opacity: 0; }
+      }
+
+      .cursor {
+        animation: blink 1s steps(2, start) infinite;
+      }
+
+      @keyframes blink {
+        50% { opacity: 0; }
+      }
+    </style>
+  </defs>
+
+  <rect width="860" height="620" rx="18" fill="#0d1117"/>
+
+  <rect x="1" y="1" width="858" height="618" rx="17"
+        fill="none" stroke="#30363d" stroke-width="2"/>
+
+  <text x="32" y="30"
+        font-family="monospace"
+        font-size="14"
+        font-weight="700"
+        fill="#c9d1d9">
+    sachin@github ~ $ ./sachin-ascii.sh
+  </text>
+
+  <circle cx="27" cy="24" r="4" fill="#8b949e"/>
+  <circle cx="41" cy="24" r="4" fill="#8b949e"/>
+  <circle cx="55" cy="24" r="4" fill="#8b949e"/>
+
+  <g transform="translate(18, 52)">
+    <text class="ascii row"
+        x="10" y="9.0"
+        style="animation-delay:0.000s">.,,::,....,:::;ii:..,,::,,,:;:...,:;;:,,,,...,:;;,,,,,:,,,:;:.,ii::;i:,.,::::;ir:.,:;;;:,,,:</text>
+    <text class="ascii row"
+        x="10" y="18.0"
+        style="animation-delay:0.018s">.,,::,....,:::;ii,..,::,,,,:;:,.,,,,,,.,;;::::::,..,,,,,,,:;:.,ir:,;i:,.,::::;ir:.,::;;:,,,:</text>
+    <text class="ascii row"
+        x="10" y="27.0"
+        style="animation-delay:0.036s">.,,::,....,,:::ii,..,::,,,,:;:,.  ,r5hMSB&amp;BB9SSG5r, .,,,,,:;,.,ir:,;i:,.,::::;ir:..::;;:,.,:</text>
+    <text class="ascii row"
+        x="10" y="36.0"
+        style="animation-delay:0.054s">..,::,....,,:::ii,..,,:,,,,::..;s5#@@@@@@@@@@@@@&amp;B#5;.,,,,:;,.,ir:,;i:,.,,:::;ii:..,:;;:,,,:</text>
+    <text class="ascii row"
+        x="10" y="45.0"
+        style="animation-delay:0.072s">.,,::,....,::::ii,..,,,,,,,,:5#&amp;@@@@&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;BG&amp;@95,,,,:;:.,ii::;i:,.,,:::;ir:..,:;;:,,,:</text>
+    <text class="ascii row"
+        x="10" y="54.0"
+        style="animation-delay:0.090s">.,,::,....,,:::ii,...,,,...X#@@@&amp;B&amp;&amp;@@@@@@@@&amp;@&amp;&amp;@@B&amp;@@3i:,,:,.:ii::;i:,..,:::;ir:..,:;;:,,,,</text>
+    <text class="ascii row"
+        x="10" y="63.0"
+        style="animation-delay:0.108s">..,::,....,,:::ii,...,,:iAG@@&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;@@@&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;@&amp;MsXs;..;i;:;i:,..,::::ir:..,:;;:,,,,</text>
+    <text class="ascii row"
+        x="10" y="72.0"
+        style="animation-delay:0.126s">..,:,,....,,:::ii,..,,.h&amp;@@&amp;&amp;&amp;&amp;&amp;&amp;&amp;B&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;@@@@@&amp;@&amp;@@@@&amp;BGh2r::;i:,..,::::ir:..,:;;:,,,,</text>
+    <text class="ascii row"
+        x="10" y="81.0"
+        style="animation-delay:0.144s">..,:,,....,,:::ii,..,,3&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;@@&amp;@@@@@@@@@@@@@@@@@@&amp;&amp;&amp;&amp;@@@&amp;BGs:;i:,.,,::::ir:..,:;;:,,,,</text>
+    <text class="ascii row"
+        x="10" y="90.0"
+        style="animation-delay:0.162s">..,:,,....,::::ii,.. ;B&amp;&amp;@@@&amp;&amp;&amp;@@@@@@&amp;&amp;B9SS#BBB&amp;@&amp;&amp;&amp;@@@@@@&amp;&amp;&amp;&amp;&amp;BB5:;i:,.,,::::ir:..,:;::,,,,</text>
+    <text class="ascii row"
+        x="10" y="99.0"
+        style="animation-delay:0.180s">..,:,,....,::::ii,.i3#&amp;&amp;&amp;@@@@&amp;@@&amp;9GGM352AAA25hMHS#9&amp;@@@@@@@&amp;&amp;&amp;&amp;@&amp;2:;i:..,,::::ir:..,::::,,,,</text>
+    <text class="ascii row"
+        x="10" y="108.0"
+        style="animation-delay:0.198s">..,:,.....,::::ii,.G@@@@@@@&amp;@@BSh2AXXsssssXXA253hHS&amp;@&amp;@@@@@@&amp;@&amp;&amp;B5:;;:..,,::::ir:..,::::,,,,</text>
+    <text class="ascii row"
+        x="10" y="117.0"
+        style="animation-delay:0.216s">..,,,,....,::::ii,.3&amp;&amp;@@@@&amp;@&amp;#h5AXssrrrrrrsXA2553hhS&amp;@@&amp;@@@@@@&amp;@#r:;i;,..,::::ir:..,::::,,,,</text>
+    <text class="ascii row"
+        x="10" y="126.0"
+        style="animation-delay:0.234s">..,,,.....,,,::ii, M@&amp;@@@&amp;@&amp;Gh52XXsrriirrsX225333hhhH9@@@@@@@&amp;@Gr;:;i;,..,::::ir;..,::::,,,,</text>
+    <text class="ascii row"
+        x="10" y="135.0"
+        style="animation-delay:0.252s">..,,,.....,,,::ii,.;G@&amp;&amp;&amp;@&amp;Hh352XXsssrrrssrrssA53hMMhhH#&amp;&amp;&amp;@&amp;&amp;Bs;;:;i;,.,,:::;ir;..,::::,,,,</text>
+    <text class="ascii row"
+        x="10" y="144.0"
+        style="animation-delay:0.270s">..,,,.....,,:::ii,. :S@&amp;@&amp;M535AXsi;iiiiriis5HS####SSHhMhG&amp;&amp;&amp;&amp;@5;i;:;i;,.,,:::;ir;..,::::,,,,</text>
+    <text class="ascii row"
+        x="10" y="153.0"
+        style="animation-delay:0.288s">..,,,.....,,,:;ii,...;9&amp;955G###9##H5ssrsAM#&amp;B9GGGHh33hMMMB@@@9;;;::;i;,..,::::ir;..,::::,,,,</text>
+    <text class="ascii row"
+        x="10" y="162.0"
+        style="animation-delay:0.306s">..,,,.....,,,:;ii,..,.X@GX3HMGGSS9#GM5sXhSSM3h9&amp;H#S5553hM9@9#GHX;::;i;,..,::::;r;..,::::,,.,</text>
+    <text class="ascii row"
+        x="10" y="171.0"
+        style="animation-delay:0.324s">..,,,.....,,::;ii,..,:.3&amp;222h9Hh99h3MM22MGGH55HH3322553hhH9Mh3#h;:::i;,..,:::;;r;..,::::,,.,</text>
+    <text class="ascii row"
+        x="10" y="180.0"
+        style="animation-delay:0.342s">..,,,.....,:::;ii,..,,,r#h2553353325h322MHM335222XsXA53hMMGG3AHh;::;i;,..,::::;r;..,::::,,.,</text>
+    <text class="ascii row"
+        x="10" y="189.0"
+        style="animation-delay:0.360s">..,,,.....,:::;ii,..,:,hH555AXsXXAA23ArsAhHM5XXAXXsX253hMHMH35M5:::;i;,.,,::::;ri..,::::,,.,</text>
+    <text class="ascii row"
+        x="10" y="198.0"
+        style="animation-delay:0.378s">..,,,.....,:::;ri,..,:,;hA25AXXsXssA2AriX333MArrsXsA25hMHMGGhHGs;:,;i;,.,,::::;ri,.,::::,,.,</text>
+    <text class="ascii row"
+        x="10" y="207.0"
+        style="animation-delay:0.396s">..,,,.....,:::;ri,..,::.sh552AXrrrrX232AhMMGHM32XA225hMMMHH3hMs;;:,:i;,.,,:::;;ri,.,::::,,,,</text>
+    <text class="ascii row"
+        x="10" y="216.0"
+        style="animation-delay:0.414s">..,,,,....,:::;ri,..,::,,53352AXXs2hHGMM3hGS##99Sh553hhhMMA;i:,ii:,:i;,.,::::;;ri,.,::::,,,,</text>
+    <text class="ascii row"
+        x="10" y="225.0"
+        style="animation-delay:0.432s">..,,,,....,:::;ri,..,:::.:553522AM##SGHhhMMHHS#HGH5333hMMMs,..:ii:,:i;,.,::::;;ri,.,::::,,,,</text>
+    <text class="ascii row"
+        x="10" y="234.0"
+        style="animation-delay:0.450s">..,,,,....,:::;ri,..,:::,.::23522GHHHh525523h335hh3333hMHGr:,,:ii:::i;,.,::::;irr,.,::::,,.,</text>
+    <text class="ascii row"
+        x="10" y="243.0"
+        style="animation-delay:0.468s">..,,,,....,:::;ri,..,::,,,,,:2h35332AA23hhh35225hMhhhMMGGGr:,.:ii:::ii,.,::::;;rr,.,::::,,.,</text>
+    <text class="ascii row"
+        x="10" y="252.0"
+        style="animation-delay:0.486s">..,,,,....,:::;ri,..,::,,,,:,.s3hhh5AXAAXXAA253MHSHHHGGGHGr:,.:ii:::ii,.,::::;;rr:.,::::,,.,</text>
+    <text class="ascii row"
+        x="10" y="261.0"
+        style="animation-delay:0.504s">..,,,,....,:::;ri,..,::,,,,::. :3hGGh55XsXX5hHHS#BSSGHMMMGs,:,:ii;::ii:.,::::;irr:.,::::,,.,</text>
+    <text class="ascii row"
+        x="10" y="270.0"
+        style="animation-delay:0.522s">..,,,,....,:::;ri,..,::,,,,::...AMhMGSGHMhHS#SS99SGMMhhhMHhr,.:ii;::ii:.,::::;irr:.,::::,,,,</text>
+    <text class="ascii row"
+        x="10" y="279.0"
+        style="animation-delay:0.540s">..,,,,....,:::;rr,..,::,,,:::...ih3hhHGSSSSGHGSGHM33333hhMSS5i:ii;:;ii:,,::::;irr:.,::::,,,,</text>
+    <text class="ascii row"
+        x="10" y="288.0"
+        style="animation-delay:0.558s">..,,,,...,,:::;rr:..,::,,,:::..,:3353hh355533333552225553MGGSGA:;;:;ii:,,::::;irs:,,:::::,,,</text>
+    <text class="ascii row"
+        x="10" y="297.0"
+        style="animation-delay:0.576s">..,,,,....,:::;rr,..,::,,,:::..,.235553352555222AAXXA2253MHM2;  .,::ii:,,::::;irs;,,:::::,.,</text>
+    <text class="ascii row"
+        x="10" y="306.0"
+        style="animation-delay:0.594s">..,,,,....,:::;rr,..,::,,,:::...i5552A5355222AAAXXXAAA25hhA:   ..,,..::,,:;;;;irs;,,:::::,,,</text>
+    <text class="ascii row"
+        x="10" y="315.0"
+        style="animation-delay:0.612s">..,,,,....,::;irr,..,::,,,::,,. 5h555AXA22222AAXXXA2A2AXr.   ...,:,.,:,..,:::;irs;,,::;::,,,</text>
+    <text class="ascii row"
+        x="10" y="324.0"
+        style="animation-delay:0.630s">..,,,,....,:;;irr,..,::,,,..,.  AGh3h3AXXAAA222AAAXr;,    .,...,,,..,,...,...,:;r;,,:::::,,,</text>
+    <text class="ascii row"
+        x="10" y="333.0"
+        style="animation-delay:0.648s">..,,,,....,:;;irr:..,,,,.......  iXX232XXXsssri:,.     ....,..,,,...:,..,,,,,,,,,:,:::;:,,,,</text>
+    <text class="ascii row"
+        x="10" y="342.0"
+        style="animation-delay:0.666s">..,,,,...,,:;;iri,.,,.....,,,,..                   ...........,,...,,......,,,,,,...,::::,,,</text>
+    <text class="ascii row"
+        x="10" y="351.0"
+        style="animation-delay:0.684s">..,,,,....::;:::,,,.........,..,....           ..   .........,,....:.......,......,,,,,:::,,</text>
+    <text class="ascii row"
+        x="10" y="360.0"
+        style="animation-delay:0.702s">..,,,,..,,,:,,,,,,................ ...  ...  ..   ................,,.  ...  .........,,,,:::</text>
+    <text class="ascii row"
+        x="10" y="369.0"
+        style="animation-delay:0.720s">.,,,,,,.,,,..................... .. ... .   ..   ..........., ... ..      ..............,,::</text>
+    <text class="ascii row"
+        x="10" y="378.0"
+        style="animation-delay:0.738s">.,,,,...........................  .   .   ..    ...............           ..............,,,:</text>
+    <text class="ascii row"
+        x="10" y="387.0"
+        style="animation-delay:0.756s">.,,.... ...  .. .. .............  .      ..    ............. .              ............,,,:</text>
+    <text class="ascii row"
+        x="10" y="396.0"
+        style="animation-delay:0.774s">.,.....  .  .  .. ..............  .     ..  . ........... .                  .. .........,,,</text>
+    <text class="ascii row"
+        x="10" y="405.0"
+        style="animation-delay:0.792s">,.....      .  . ................ .   ...  . ...........  .                       .......,,,</text>
+    <text class="ascii row"
+        x="10" y="414.0"
+        style="animation-delay:0.810s">......             .............. ..  ..  . ....... .         . .                ........,,,</text>
+    <text class="ascii row"
+        x="10" y="423.0"
+        style="animation-delay:0.828s">..                  ............  ..  .      .....             ..               .   ......,,</text>
+    <text class="ascii row"
+        x="10" y="432.0"
+        style="animation-delay:0.846s">.                     ..........   .  .       .                ..  ..             .......,,,</text>
+    <text class="ascii row"
+        x="10" y="441.0"
+        style="animation-delay:0.864s">..                        ......   .  .                        ... .                ...,,,,,</text>
+    <text class="ascii row"
+        x="10" y="450.0"
+        style="animation-delay:0.882s">.     ..                   ..      .  .                     ........             .........,,</text>
+    <text class="ascii row"
+        x="10" y="459.0"
+        style="animation-delay:0.900s">.  ...... .. ..                    .                       .......,             . .. ....,,,</text>
+    <text class="ascii row"
+        x="10" y="468.0"
+        style="animation-delay:0.918s">.      .........                   .  .                ..........,.                      ..,</text>
+    <text class="ascii row"
+        x="10" y="477.0"
+        style="animation-delay:0.936s">..        .......                 ..  .         .  .  ............  ,,:;;iirrrrriii;::,..</text>
+    <text class="ascii row"
+        x="10" y="486.0"
+        style="animation-delay:0.954s">.............,.....               ..  .         ..... ......,,,.,isXAAAA2A2255333333333552Xr</text>
+    <text class="ascii row"
+        x="10" y="495.0"
+        style="animation-delay:0.972s">           ..,:... ......  .. .  .,.         .  .......,,,,.,:,:X55555sir322222555553333hhMM</text>
+    <text class="ascii row"
+        x="10" y="504.0"
+        style="animation-delay:0.990s">......        ,;,,........ ..    .,          .  ........,,,,,::X525335223h22222225533333hhhh</text>
+    <text class="ascii row"
+        x="10" y="513.0"
+        style="animation-delay:1.008s">55222AAXXsri;:,ii:,.,,..... .    ..  .      .  ..........:::,r55AA23MhMh52riXh2AA2225333hhMM</text>
+    <text class="ascii row"
+        x="10" y="522.0"
+        style="animation-delay:1.026s">3552222A22255352Ai,,,,,.... ..   ..  .      .  ...... ....:;rh35335AXX2533553322AAA22533hhMM</text>
+  </g>
+
+  <rect class="scan"
+        x="18" y="52" width="824" height="2"
+        fill="url(#scan)"/>
+
+  <text x="32" y="603"
+        font-family="monospace"
+        font-size="11"
+        fill="#8b949e">
+    AI &amp; Data Science Engineer  •  Full Stack AI  •  RAG  •  LLMs
+  </text>
+
+  <text x="806" y="603"
+        font-family="monospace"
+        font-size="12"
+        fill="#c9d1d9"
+        class="cursor">█</text>
+
+</svg>
