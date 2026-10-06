@@ -15,21 +15,22 @@ FONT = (
 CHAR_RATIO = 0.6  # advance width of a monospace glyph, in em
 
 C = {
-    "bg": "#0a0d12",
-    "card": "#0d1117",
-    "bar": "#141920",
-    "border": "#262c36",
-    "text": "#e6edf3",
-    "soft": "#b1bac4",
-    "muted": "#7d8590",
-    "dim": "#484f58",
-    "green": "#3fb950",
-    "green_hi": "#7ee787",
-    "teal": "#56d4dd",
-    "amber": "#e3b341",
-    "blue": "#79c0ff",
-    "purple": "#d2a8ff",
-    "red": "#ff7b72",
+    # Graphite base with a single steel-blue accent: calm, professional.
+    "bg": "#0b0e13",
+    "card": "#10141a",
+    "bar": "#13181f",
+    "border": "#252b34",
+    "text": "#dde2e8",
+    "soft": "#a9b2bd",
+    "muted": "#717b87",
+    "dim": "#3b424c",
+    "accent": "#7f9bbd",      # prompts, bullets
+    "accent_hi": "#c3cedb",   # highlights, big numbers
+    "accent_alt": "#6f7f96",  # gradient partner of accent_hi
+    "warm": "#b4a07c",        # commit hashes, field names
+    "info": "#93a6bd",        # organisations, paths
+    "tag": "#9aa3b2",         # tech tags
+    "key": "#b8a48a",         # yaml keys
 }
 
 BASE_CSS = f"""
@@ -126,11 +127,11 @@ def fade(start, inner, cls="in"):
 
 def prompt(path="~"):
     return [
-        ("sachin", C["green"], 700),
+        ("sachin", C["accent"], 700),
         ("@", C["muted"]),
-        ("budhhi", C["green"], 700),
+        ("budhhi", C["accent"], 700),
         (" ", C["muted"]),
-        (path, C["blue"]),
+        (path, C["info"]),
         (" $ ", C["muted"]),
     ]
 
@@ -144,7 +145,7 @@ def command(x, y, cmd, start, path="~", size=14, cps=32):
     return head + body, end + 0.2
 
 
-def cursor(x, y, size=14, start=0.0, fill=C["green_hi"]):
+def cursor(x, y, size=14, start=0.0, fill=C["accent_hi"]):
     return fade(start, f'<rect class="blink" x="{x:.1f}" y="{y - size * 0.82:.1f}" width="{cw(size):.1f}" height="{size * 1.02:.1f}" fill="{fill}"/>')
 
 
@@ -163,8 +164,8 @@ def window(w, h, title, body, extra_css="", label=""):
     <stop offset="100%" stop-color="#000" stop-opacity=".45"/>
   </radialGradient>
   <linearGradient id="beam" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0%" stop-color="{C["green"]}" stop-opacity="0"/>
-    <stop offset="100%" stop-color="{C["green"]}" stop-opacity=".06"/>
+    <stop offset="0%" stop-color="{C["accent"]}" stop-opacity="0"/>
+    <stop offset="100%" stop-color="{C["accent"]}" stop-opacity=".06"/>
   </linearGradient>
   <style>{BASE_CSS}{extra_css}</style>
 </defs>
@@ -172,9 +173,9 @@ def window(w, h, title, body, extra_css="", label=""):
   <rect width="{w}" height="{h}" fill="{C["bg"]}"/>
   <rect width="{w}" height="38" fill="{C["bar"]}"/>
   <rect y="38" width="{w}" height="1" fill="{C["border"]}"/>
-  <circle cx="22" cy="19" r="6" fill="#ff5f57"/>
-  <circle cx="42" cy="19" r="6" fill="#febc2e"/>
-  <circle cx="62" cy="19" r="6" fill="#28c840"/>
+  <circle cx="22" cy="19" r="6" fill="#4a4f57"/>
+  <circle cx="42" cy="19" r="6" fill="#4a4f57"/>
+  <circle cx="62" cy="19" r="6" fill="#4a4f57"/>
   {text(w / 2 + 30, 24, title, 12, C["muted"], anchor="middle")}
 {body}
   <rect class="sweep" style="--h:{h + 60}px" y="0" width="{w}" height="60" fill="url(#beam)"/>

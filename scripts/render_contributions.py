@@ -14,7 +14,7 @@ from svgkit import C, DESKTOP, MOBILE, command, cw, fade, spans, text, window
 INPUT_FILE = Path("data/contributions.json")
 OUT = Path("assets")
 
-PALETTE = ["#161b22", "#0e4429", "#006d32", "#26a641", "#39d353"]
+PALETTE = ["#161b22", "#1d2838", "#2b405c", "#47648a", "#7f9bbd"]  # steel-blue scale
 
 
 def fmt_day(iso):
@@ -72,7 +72,7 @@ def render(data, w):
     for i, (value, label) in enumerate(stats):
         sx = X + (i % per_row) * col_w
         sy = y + (i // per_row) * 56
-        parts.append(fade(t + 0.08 * i, text(sx, sy + 28, value, 26, C["green_hi"], weight=700)
+        parts.append(fade(t + 0.08 * i, text(sx, sy + 28, value, 26, C["accent_hi"], weight=700)
                           + text(sx, sy + 48, label, 11, C["muted"]), "rise"))
     rows = -(-len(stats) // per_row)
     y += rows * 56 + 18
@@ -88,7 +88,7 @@ def render(data, w):
         parts.append(f'<rect x="{X}" y="{y:.1f}" width="{w - 2 * X}" height="1" fill="{C["border"]}"/>')
         y += 30
         head = [(str(year["year"]), C["text"], 700), ("  ", C["muted"]),
-                (f"{year['total']:,} contributions", C["green_hi"])]
+                (f"{year['total']:,} contributions", C["accent_hi"])]
         if year["year"] == today.year:
             head.append(("  · tracking daily", C["muted"]))
         parts.append(fade(t, spans(X, y, head, 14)))
@@ -100,7 +100,7 @@ def render(data, w):
 
     synced = datetime.fromisoformat(data["generated_at"]).strftime("%Y-%m-%d %H:%M UTC")
     y += 6
-    parts.append(fade(t, spans(X, y, [("● ", C["green"]), (f"synced {synced}", C["muted"])], 11)))
+    parts.append(fade(t, spans(X, y, [("● ", C["accent"]), (f"synced {synced}", C["muted"])], 11)))
     if small:
         y += 22
         lx = X + 34

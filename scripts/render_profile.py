@@ -40,7 +40,7 @@ STROKES = {  # box-drawing glyph -> segments from the cell centre, in half-cells
 
 def gradient(gid, x1, x2):
     return (f'<defs><linearGradient id="{gid}" gradientUnits="userSpaceOnUse" x1="{x1:.0f}" y1="0" x2="{x2:.0f}" y2="0">'
-            f'<stop offset="0%" stop-color="{C["green_hi"]}"/><stop offset="100%" stop-color="{C["teal"]}"/>'
+            f'<stop offset="0%" stop-color="{C["text"]}"/><stop offset="100%" stop-color="{C["accent"]}"/>'
             "</linearGradient></defs>")
 
 
@@ -66,7 +66,7 @@ def banner_svg(word, x, y, width, start, gid="name"):
         box = f'<rect x="{x:.1f}" y="{y + r * bh:.1f}" width="{width:.1f}" height="{bh:.1f}" fill="none"/>'
         out.append(
             f'<g style="{type_style(len(row), 0.5, start + r * 0.07)}">{box}'
-            f'<path d="{"".join(lines)}" stroke="#2ea043" stroke-width="1.5" opacity=".55" fill="none"/>'
+            f'<path d="{"".join(lines)}" stroke="{C["dim"]}" stroke-width="1.5" opacity=".9" fill="none"/>'
             f'<path d="{"".join(blocks)}" fill="url(#{gid})"/></g>'
         )
     return "".join(out), 6 * bh
@@ -97,7 +97,7 @@ def portrait_svg(x, y, width):
         # Scrambled glyphs flash in the same cells first, then the real row resolves.
         noise = "".join(" " if ch == " " else rng.choice(GLITCH) for ch in line)
         glitch = [text(x + m.start() * width / cols, y + (r + 1) * step, m.group(), round(step, 2),
-                       C["green"], weight=700, squeeze=True) for m in re.finditer(r"\S+", noise)]
+                       "#4a5566", weight=700, squeeze=True) for m in re.finditer(r"\S+", noise)]
         out.append(f'<g class="scramble" style="animation-delay:{delay:.3f}s">{"".join(glitch)}</g>')
         out.append(f'<g class="decode" style="animation-delay:{delay + 0.22:.3f}s">{"".join(runs)}</g>')
     return "".join(out), rows * step
@@ -106,7 +106,7 @@ def portrait_svg(x, y, width):
 def hud(x0, y0, x1, y1):
     out = []
     for cx, cy, dx, dy in [(x0, y0, 1, 1), (x1, y0, -1, 1), (x0, y1, 1, -1), (x1, y1, -1, -1)]:
-        out.append(f'<path d="M{cx:.1f} {cy + 14 * dy:.1f}V{cy:.1f}H{cx + 14 * dx:.1f}" fill="none" stroke="{C["green"]}" stroke-width="1.5" opacity=".8"/>')
+        out.append(f'<path d="M{cx:.1f} {cy + 14 * dy:.1f}V{cy:.1f}H{cx + 14 * dx:.1f}" fill="none" stroke="{C["accent"]}" stroke-width="1.5" opacity=".55"/>')
     label = f"subject: sachin_s · ascii {PORTRAIT['cols']}x{PORTRAIT['rows']} · bg removed"
     out.append(text(x0, y1 + 20, label, 11, C["muted"]))
     return fade(0.1, "".join(out))
@@ -115,14 +115,14 @@ def hud(x0, y0, x1, y1):
 def roles_svg(x, y, start, size=13, slot=3.0):
     """Cycle through PROFILE["roles"], typing each in and erasing it, forever."""
     roles = PROFILE["roles"]
-    out = [fade(start, spans(x, y, [("~/roles ", C["muted"]), ("▸ ", C["green"])], size))]
+    out = [fade(start, spans(x, y, [("~/roles ", C["muted"]), ("▸ ", C["accent"])], size))]
     rx = x + 10 * cw(size)
     cycle = slot * len(roles)
     for i, role in enumerate(roles):
         box = f'<rect x="{rx:.1f}" y="{y - size:.1f}" width="{len(role) * cw(size):.1f}" height="{size * 1.3:.1f}" fill="none"/>'
         style = (f"animation: role {cycle:.1f}s steps({len(role) * 2}, end) {start + i * slot:.2f}s infinite both")
         cls = "role" if i == 0 else "role role-alt"
-        out.append(f'<g class="{cls}" style="{style}">{box}{text(rx, y, role, size, C["green_hi"], weight=700)}</g>')
+        out.append(f'<g class="{cls}" style="{style}">{box}{text(rx, y, role, size, C["accent_hi"], weight=700)}</g>')
     return "".join(out)
 
 
@@ -146,7 +146,7 @@ def hero(w):
     for label in ["mounting vector store", "warming up LLM context", "linking full-stack runtime"]:
         y += 22
         t += 0.18
-        parts.append(fade(t, spans(X, y, [("[  ", C["muted"]), ("OK", C["green_hi"], 700),
+        parts.append(fade(t, spans(X, y, [("[  ", C["muted"]), ("OK", C["accent_hi"], 700),
                                           ("  ] ", C["muted"]), (label, C["soft"])], size)))
 
     y += 26
@@ -171,14 +171,14 @@ def hero(w):
     parts.append(cmd)
     for item in PROFILE["focus"]:
         y += 22
-        line, t = typed(X, y, [("▸ ", C["green"]), (item, C["soft"])], t, size, cps=70)
+        line, t = typed(X, y, [("▸ ", C["accent"]), (item, C["soft"])], t, size, cps=70)
         parts.append(line)
 
     y += 36
     cmd, t = command(X, y, "status", t)
     parts.append(cmd)
     y += 22
-    status = [("● ", C["green_hi"]), (PROFILE["status"].upper(), C["green_hi"], 700),
+    status = [("● ", C["accent_hi"]), (PROFILE["status"].upper(), C["accent_hi"], 700),
               (f"  · {PROFILE['based']}", C["soft"])]
     n = sum(len(s[0]) for s in status)
     parts.append(fade(t, spans(X, y, status, size)))
@@ -193,8 +193,8 @@ def hero(w):
     parts.append(
         f'<rect y="{sb}" width="{w}" height="28" fill="{C["bar"]}"/>'
         f'<rect y="{sb}" width="{w}" height="1" fill="{C["border"]}"/>'
-        f'<rect x="0" y="{sb}" width="96" height="28" fill="{C["green"]}"/>'
-        + text(14, sb + 18, "PORTFOLIO", 12, "#06110a", weight=700)
+        f'<rect x="0" y="{sb}" width="96" height="28" fill="#27303d"/>'
+        + text(14, sb + 18, "PORTFOLIO", 12, C["text"], weight=700)
         + spans(110, sb + 18, tabs, 12)
         + text(w - 16, sb + 18, "Bengaluru, IN", 12, C["muted"], anchor="end")
     )
@@ -251,7 +251,7 @@ def about(w):
     ]
     size = 13
     y = top
-    parts.append(fade(t, spans(ix, y, [("sachin", C["green_hi"], 700), ("@", C["muted"]), ("budhhi", C["green_hi"], 700)], 14)))
+    parts.append(fade(t, spans(ix, y, [("sachin", C["accent_hi"], 700), ("@", C["muted"]), ("budhhi", C["accent_hi"], 700)], 14)))
     y += 10
     parts.append(fade(t, f'<rect x="{ix}" y="{y}" width="{13 * cw(14):.1f}" height="1" fill="{C["dim"]}"/>'))
     key_w = 11
@@ -260,10 +260,10 @@ def about(w):
         for i, line in enumerate(wrap(value, room)):
             y += 21
             t += 0.06
-            head = (f"{key}:".ljust(key_w), C["amber"], 700) if i == 0 else (" " * key_w, C["muted"])
+            head = (f"{key}:".ljust(key_w), C["warm"], 700) if i == 0 else (" " * key_w, C["muted"])
             parts.append(fade(t, spans(ix, y, [head, (line, C["text"])], size)))
     y += 18
-    swatches = [C["red"], C["amber"], C["green"], C["teal"], C["blue"], C["purple"], C["soft"], C["text"]]
+    swatches = [C["key"], C["warm"], C["accent"], C["accent_alt"], C["info"], C["tag"], C["soft"], C["text"]]
     parts.append(fade(t + 0.1, "".join(
         f'<rect x="{ix + i * 26}" y="{y}" width="24" height="14" fill="{c}"/>' for i, c in enumerate(swatches))))
     y += 14
@@ -297,11 +297,11 @@ def experience(w):
         y += 30
         t += 0.2
         last_node = y - 5
-        node = (f'<circle cx="{gx}" cy="{y - 5}" r="6" fill="{C["bg"]}" stroke="{C["amber"]}" stroke-width="2"/>'
-                f'<circle cx="{gx}" cy="{y - 5}" r="2.5" fill="{C["amber"]}"/>')
-        ref_color = C["green_hi"] if n == 0 else (C["purple"] if "tag" in job["ref"] else C["blue"])
-        head = [("commit ", C["amber"]), (job["hash"], C["amber"], 700), (" (", C["amber"]),
-                (job["ref"], ref_color, 700), (")", C["amber"])]
+        node = (f'<circle cx="{gx}" cy="{y - 5}" r="6" fill="{C["bg"]}" stroke="{C["warm"]}" stroke-width="2"/>'
+                f'<circle cx="{gx}" cy="{y - 5}" r="2.5" fill="{C["warm"]}"/>')
+        ref_color = C["accent_hi"] if n == 0 else (C["tag"] if "tag" in job["ref"] else C["info"])
+        head = [("commit ", C["warm"]), (job["hash"], C["warm"], 700), (" (", C["warm"]),
+                (job["ref"], ref_color, 700), (")", C["warm"])]
         parts.append(fade(t, node + spans(tx, y, head, 12)))
         if job["when"]:
             if w < 800:
@@ -315,18 +315,18 @@ def experience(w):
             parts.append(fade(t, text(tx, y, line, 16, C["text"], weight=700), "rise"))
             y += 20
         for line in wrap(job["org"], fits(w - tx - 26, 12.5)):
-            parts.append(fade(t + 0.1, text(tx, y, line, 12.5, C["blue"]), "rise"))
+            parts.append(fade(t + 0.1, text(tx, y, line, 12.5, C["info"]), "rise"))
             y += 18
         y -= 18
         for p in job["points"]:
             for i, line in enumerate(wrap(p, room)):
                 y += step
                 lead = "+ " if i == 0 else "  "
-                piece, t = typed(tx, y, [(lead, C["green"]), (line, C["soft"])], t, size, cps=160)
+                piece, t = typed(tx, y, [(lead, C["accent"]), (line, C["soft"])], t, size, cps=160)
                 parts.append(piece)
         if job["stack"]:
             y += step + 2
-            parts.append(fade(t, spans(tx, y, [("stack: ", C["muted"]), (job["stack"], C["purple"])], 12)))
+            parts.append(fade(t, spans(tx, y, [("stack: ", C["muted"]), (job["stack"], C["tag"])], 12)))
         y += 6
     rail = (f'<rect x="{gx - 1}" y="{rail_top}" width="2" height="{last_node - rail_top:.0f}" '
             f'fill="{C["dim"]}" class="grow"/>')
@@ -342,11 +342,11 @@ def experience(w):
 
 def card(p, cx, top, cwid, h, lines, start):
     live = p["status"] == "ONGOING"
-    accent = C["green_hi"] if live else C["blue"]
+    accent = C["accent_hi"] if live else C["info"]
     g = [f'<rect x="{cx:.1f}" y="{top:.1f}" width="{cwid:.1f}" height="{h:.1f}" rx="10" fill="{C["card"]}" stroke="{C["border"]}"/>',
          f'<rect x="{cx:.1f}" y="{top:.1f}" width="3" height="{h:.1f}" rx="1.5" fill="{accent}"/>',
          text(cx + 20, top + 32, p["name"], 18, C["text"], weight=700),
-         text(cx + 20, top + 52, p["tag"], 12, C["blue"]),
+         text(cx + 20, top + 52, p["tag"], 12, C["info"]),
          text(cx + cwid - 16, top + 52, p["visibility"], 11, C["muted"], anchor="end")]
     badge_w = len(p["status"]) * cw(11) + 20
     bx = cx + cwid - 16 - badge_w
@@ -358,7 +358,7 @@ def card(p, cx, top, cwid, h, lines, start):
     for line in lines:
         g.append(text(cx + 20, ly, line, 12.5, C["soft"]))
         ly += 19
-    g.append(text(cx + 20, top + h - 18, p["stack"], 11.5, C["purple"]))
+    g.append(text(cx + 20, top + h - 18, p["stack"], 11.5, C["tag"]))
     return fade(start, "".join(g), "rise")
 
 
@@ -393,11 +393,11 @@ def projects(w):
         y += 22
         t += 0.05
         if mobile:
-            parts.append(fade(t, spans(X, y, [("▸ ", C["green"]), (p["name"], C["text"], 700), ("  " + p["year"], C["muted"])], 12.5)))
+            parts.append(fade(t, spans(X, y, [("▸ ", C["accent"]), (p["name"], C["text"], 700), ("  " + p["year"], C["muted"])], 12.5)))
             y += 18
             parts.append(fade(t, text(X + 2 * cw(12.5), y, p["desc"], 12, C["soft"])))
         else:
-            parts.append(fade(t, spans(X, y, [("▸ ", C["green"]), (p["name"].ljust(name_w), C["text"], 700),
+            parts.append(fade(t, spans(X, y, [("▸ ", C["accent"]), (p["name"].ljust(name_w), C["text"], 700),
                                               (p["year"] + "   ", C["muted"]), (p["desc"], C["soft"])], 12.5)))
     css = """
   .pulse { animation: pulse 1.8s ease-in-out infinite; }
@@ -428,7 +428,7 @@ def yaml_block(X, y, entries, t, w, size=13, step=22):
         for i, line in enumerate(lines):
             if i:
                 y += step
-            runs = ([(key, C["red"]), (":", C["muted"]), (" " * (key_w - len(key) - 1) + "[ ", C["muted"])]
+            runs = ([(key, C["key"]), (":", C["muted"]), (" " * (key_w - len(key) - 1) + "[ ", C["muted"])]
                     if i == 0 else [(" " * (key_w + 2), C["muted"])])
             runs.append((line, C["text"]))
             if i == len(lines) - 1:
@@ -457,13 +457,13 @@ def certs(w):
     parts.append(cmd)
     y = 76
     y += 26
-    parts.append(fade(t, spans(X, y, [("certifications/", C["blue"], 700), (f"  {total} verified", C["muted"])], size)))
+    parts.append(fade(t, spans(X, y, [("certifications/", C["info"], 700), (f"  {total} verified", C["muted"])], size)))
     groups = PROFILE["certifications"]
     for g, (issuer, items) in enumerate(groups):
         last = g == len(groups) - 1
         y += 24
         t += 0.12
-        parts.append(fade(t, spans(X, y, [("└── " if last else "├── ", C["dim"]), (issuer + "/", C["blue"], 700),
+        parts.append(fade(t, spans(X, y, [("└── " if last else "├── ", C["dim"]), (issuer + "/", C["info"], 700),
                                           (f"  ({len(items)})", C["muted"])], size)))
         pipe = "    " if last else "│   "
         room = fits(w - X - 26, size) - 8
@@ -487,7 +487,7 @@ def certs(w):
     y += 32
     big = 20 if w >= 800 else 17
     msg = "let's build something intelligent."
-    line, t = typed(X, y, [(msg, C["green_hi"])], t, big, cps=26)
+    line, t = typed(X, y, [(msg, C["accent_hi"])], t, big, cps=26)
     parts.append(line)
     parts.append(cursor(X + len(msg) * cw(big) + 6, y, big, t))
     return window(w, y + 34, "~/certifications — tree", "".join(parts),

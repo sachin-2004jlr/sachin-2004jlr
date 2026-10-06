@@ -14,7 +14,7 @@
 
 <br><br>
 
-<a href="https://sachin-2004jlr.github.io/My-Portifolio/"><img src="https://img.shields.io/badge/portfolio-sachin--2004jlr.github.io-7ee787?style=for-the-badge&labelColor=141920" alt="Portfolio"></a> <a href="https://www.linkedin.com/in/sachin-s-4a74b72a9/"><img src="https://img.shields.io/badge/linkedin-sachin--s-79c0ff?style=for-the-badge&labelColor=141920" alt="LinkedIn"></a> <a href="mailto:sachin2004jlr@gmail.com"><img src="https://img.shields.io/badge/email-sachin2004jlr%40gmail.com-e3b341?style=for-the-badge&labelColor=141920" alt="Email"></a> <a href="https://github.com/sachin-2004jlr?tab=repositories"><img src="https://img.shields.io/badge/github-sachin--2004jlr-d2a8ff?style=for-the-badge&labelColor=141920" alt="GitHub repositories"></a>
+<a href="https://sachin-2004jlr.github.io/My-Portifolio/"><img src="https://img.shields.io/badge/portfolio-sachin--2004jlr.github.io-27303d?style=for-the-badge&labelColor=13181f" alt="Portfolio"></a> <a href="https://www.linkedin.com/in/sachin-s-4a74b72a9/"><img src="https://img.shields.io/badge/linkedin-sachin--s-27303d?style=for-the-badge&labelColor=13181f" alt="LinkedIn"></a> <a href="mailto:sachin2004jlr@gmail.com"><img src="https://img.shields.io/badge/email-sachin2004jlr%40gmail.com-27303d?style=for-the-badge&labelColor=13181f" alt="Email"></a> <a href="https://github.com/sachin-2004jlr?tab=repositories"><img src="https://img.shields.io/badge/github-sachin--2004jlr-27303d?style=for-the-badge&labelColor=13181f" alt="GitHub repositories"></a>
 
 <br><br>
 
