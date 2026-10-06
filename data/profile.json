@@ -1,0 +1,134 @@
+{
+  "name": "Sachin S",
+  "role": "Junior Full Stack AI Engineer",
+  "company": "Budhhi Technologies",
+  "company_location": "Toronto, Canada (remote)",
+  "based": "Bengaluru, India",
+  "status": "Open to opportunities",
+  "statement": "I'm a Full Stack AI Engineer who builds intelligent, production-grade applications, from model to interface. My sweet spot is where Generative AI meets dependable engineering: semantic search, RAG, agents, and the unglamorous-but-essential auth, access control and rate limiting.",
+  "focus": [
+    "Generative AI · RAG · AI agents · MCP",
+    "Hybrid retrieval, reranking & answer verification",
+    "Full stack: React · Next.js · Flask · FastAPI"
+  ],
+  "links": {
+    "github": "https://github.com/sachin-2004jlr",
+    "linkedin": "https://www.linkedin.com/in/sachin-s-4a74b72a9/",
+    "email": "sachin2004jlr@gmail.com",
+    "portfolio": "https://sachin-2004jlr.github.io/My-Portifolio/"
+  },
+  "experience": [
+    {
+      "hash": "a7f3c91",
+      "ref": "HEAD -> main",
+      "when": "Aug 2026 – present",
+      "title": "Junior Full Stack AI Engineer",
+      "org": "Budhhi Technologies · Full-time · Toronto, Canada (remote)",
+      "points": [
+        "Promoted from the software-development internship to a full-time engineering role after shipping the platform's core AI features.",
+        "Own AI-driven discovery on the talent-matching platform end to end: semantic profile matching, real-time messaging and access control across React, Flask and MongoDB."
+      ],
+      "stack": "react flask mongodb openai pinecone socket.io"
+    },
+    {
+      "hash": "5be0d42",
+      "ref": "tag: internship",
+      "when": "Feb 2026 – Aug 2026",
+      "title": "Associate Software Developer",
+      "org": "Budhhi Technologies · Internship · Toronto, Canada (remote)",
+      "points": [
+        "Built a full-stack platform for intelligent user discovery on React, Flask and MongoDB with JWT auth, role-based access control, rate limiting and real-time messaging via Flask-SocketIO.",
+        "Integrated the OpenAI API and Pinecone embeddings for AI profile matching and semantic search; implemented resume parsing, ATS scoring and NLP data extraction."
+      ],
+      "stack": "python flask react mongodb openai socket.io"
+    },
+    {
+      "hash": "4c0e2b8",
+      "ref": "tag: internship",
+      "when": "Apr 2025 – Jun 2025",
+      "title": "Machine Learning Intern",
+      "org": "Acmegrade · Remote",
+      "points": [
+        "Computer vision, NLP and forecasting projects, applying ML techniques to real-world datasets.",
+        "Delivered measurable results through hands-on, end-to-end ML pipelines."
+      ],
+      "stack": "python tensorflow opencv"
+    },
+    {
+      "hash": "1e9d5a0",
+      "ref": "education",
+      "when": "",
+      "title": "B.E. Artificial Intelligence & Data Science",
+      "org": "Global Academy of Technology, Bengaluru · CGPA 9.07 / 10",
+      "points": [],
+      "stack": ""
+    },
+    {
+      "hash": "0a00c3f",
+      "ref": "root",
+      "when": "",
+      "title": "Pre-University Education",
+      "org": "Sri Siddaganga PU College, Davanagere · 92.5%",
+      "points": [],
+      "stack": ""
+    }
+  ],
+  "featured_projects": [
+    {
+      "name": "TalentMatch AI",
+      "tag": "AI-Powered Talent Matching Platform",
+      "status": "ONGOING",
+      "visibility": "private · Budhhi",
+      "desc": "Full-stack platform for AI-driven candidate matching: OpenAI + Pinecone semantic search, resume parsing and ATS scoring, JWT auth with RBAC, and real-time messaging over Socket.IO.",
+      "stack": "react · flask · mongodb · openai · pinecone"
+    },
+    {
+      "name": "DocuTrust",
+      "tag": "Self-Verifying Hybrid RAG",
+      "status": "ONGOING",
+      "visibility": "private",
+      "desc": "Answers from your documents with clickable citations: dense + BM25 retrieval fused with RRF, cross-encoder reranking, and NLI fact-checks on every cited claim. Gemini ↔ Ollama, Pinecone ↔ Qdrant.",
+      "stack": "fastapi · react · gemini · qdrant · mongodb"
+    },
+    {
+      "name": "WardrobeAI",
+      "tag": "3D Try-On & AI Stylist",
+      "status": "ONGOING",
+      "visibility": "private",
+      "desc": "Virtual wardrobe with a three.js try-on avatar and a Gemini stylist that builds outfits only from clothes you own. Next.js 15, Auth.js, Cloudinary and an SSRF-guarded product scraper.",
+      "stack": "next.js · typescript · three.js · gemini"
+    },
+    {
+      "name": "RAG Streamlit App",
+      "tag": "Retrieval-Augmented Generation",
+      "status": "2026",
+      "visibility": "public",
+      "desc": "Ingest documents and query them in an interactive Streamlit UI; a vector-retrieval pipeline feeds the LLM for context-grounded, hallucination-resistant answers.",
+      "stack": "python · rag · streamlit · vector db · llm"
+    }
+  ],
+  "more_projects": [
+    {"name": "Video Summarizer", "year": "2025", "desc": "deep-learning lecture video summarizer", "repo": "Video_summarizer"},
+    {"name": "QA Bot", "year": "2026", "desc": "context-aware question answering", "repo": "qa-bot"},
+    {"name": "Cancer Detection (ML)", "year": "2025", "desc": "random forest vs SVM vs XGBoost", "repo": "cancer-detection-ml"},
+    {"name": "Customer Review Sentiment", "year": "2025", "desc": "NLP sentiment classification", "repo": "Sentimental-Analysis-of-Customer-Reviews"},
+    {"name": "Stock Price Prediction & EDA", "year": "2025", "desc": "LSTM forecasting + market EDA", "repo": "stock-price-prediction-eda"},
+    {"name": "Real-Time Face Detection", "year": "2024", "desc": "OpenCV Haar cascades, low latency", "repo": "FACE-DETECTION"},
+    {"name": "Titanic Survival Prediction", "year": "2025", "desc": "feature engineering + classification", "repo": "Titanic_Survival_prediction"}
+  ],
+  "stack": [
+    ["genai_agents", ["Generative AI apps", "Prompt engineering & evals", "AI agents", "RAG", "Hybrid retrieval (dense + BM25)", "RRF", "Cross-encoder reranking", "NLI citation checks", "MCP", "Tool calling"]],
+    ["languages", ["Python", "JavaScript", "TypeScript", "SQL", "HTML/CSS"]],
+    ["frameworks", ["React", "Next.js", "Flask", "FastAPI", "Pydantic", "Three.js", "Tailwind CSS", "Flask-SocketIO"]],
+    ["ai_ml", ["LangChain", "LangGraph", "Claude API", "OpenAI API", "Gemini", "Hugging Face", "Ollama", "Sentence-Transformers", "TensorFlow", "PyTorch", "Keras", "Scikit-learn", "OpenCV", "Pandas", "NumPy"]],
+    ["data_infra", ["MongoDB", "Pinecone", "Qdrant", "Redis", "REST", "WebSockets", "SSE", "JWT", "OAuth 2.0", "Auth.js", "Cloudinary", "Docker", "Kubernetes", "AWS", "Snowflake", "Git"]],
+    ["analytics", ["Power BI", "Tableau", "SQL", "Excel"]]
+  ],
+  "certifications": [
+    ["anthropic", ["Building with the Claude API", "Claude with Amazon Bedrock", "Introduction to MCP", "MCP: Advanced Topics", "Claude Code 101", "Claude Code in Action", "Claude 101", "Claude Platform 101", "Claude Cowork", "AI Fluency: Framework & Foundations", "AI Fluency for Educators", "AI Fluency for Students"]],
+    ["google", ["Agentic AI Day (Hack2Skill)", "Gemini for Data Scientists & Analysts", "Generative AI with Vertex AI Gemini API", "GenAI Apps with Gemini & Streamlit", "Gemini Multimodality & Multimodal RAG", "AI Apps with Gemini & Imagen", "Prompt Design in Vertex AI"]],
+    ["deloitte", ["Data Analytics Job Simulation"]],
+    ["acmegrade", ["Machine Learning"]],
+    ["infosys", ["Python Foundation"]]
+  ]
+}

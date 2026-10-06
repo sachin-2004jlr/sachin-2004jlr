@@ -1,166 +1,71 @@
+<!--
+  Every panel below is an animated SVG generated from data/profile.json:
+    python scripts/render_profile.py         # hero, about, career, projects, stack, certifications
+    python scripts/render_contributions.py   # contribution graph (refreshed by GitHub Actions)
+  Narrow screens get the *-mobile.svg variants through <picture>.
+-->
+
 <div align="center">
 
-<img src="./sachin-ascii.svg" width="860"/>
+<picture>
+  <source media="(max-width: 600px)" srcset="https://raw.githubusercontent.com/sachin-2004jlr/sachin-2004jlr/main/assets/hero-mobile.svg">
+  <img src="assets/hero.svg" width="100%" alt="Sachin S, Junior Full Stack AI Engineer at Budhhi Technologies. Animated terminal with an ASCII portrait.">
+</picture>
 
 <br><br>
 
-<h3>
-<code>sachin@github ~ $ ./contributions.sh</code>
-</h3>
-
-<img src="./contrib-heatmap.svg" width="860"/>
+<a href="https://sachin-2004jlr.github.io/My-Portifolio/"><img src="https://img.shields.io/badge/portfolio-sachin--2004jlr.github.io-7ee787?style=for-the-badge&labelColor=141920" alt="Portfolio"></a> <a href="https://www.linkedin.com/in/sachin-s-4a74b72a9/"><img src="https://img.shields.io/badge/linkedin-sachin--s-79c0ff?style=for-the-badge&labelColor=141920" alt="LinkedIn"></a> <a href="mailto:sachin2004jlr@gmail.com"><img src="https://img.shields.io/badge/email-sachin2004jlr%40gmail.com-e3b341?style=for-the-badge&labelColor=141920" alt="Email"></a> <a href="https://github.com/sachin-2004jlr?tab=repositories"><img src="https://img.shields.io/badge/github-sachin--2004jlr-d2a8ff?style=for-the-badge&labelColor=141920" alt="GitHub repositories"></a>
 
 <br><br>
 
-<h3>
-<code>sachin@github ~ $ whoami</code>
-</h3>
-
-<p>
-AI &amp; Data Science Engineer - Full Stack AI - RAG - LLMs
-</p>
-
-</div>
-
----
-
-<div align="center">
-
-### `sachin@github ~ $ cat about.txt`
-
-</div>
-
-## > about
-
-I'm a **Junior Full Stack AI Engineer** focused on building intelligent applications with **Generative AI, RAG, semantic search, and modern full-stack technologies**.
-
-I enjoy turning complex problems into practical AI-powered products - from document intelligence and talent matching to intelligent search and automation.
-
----
-
-<div align="center">
-
-### `sachin@github ~ $ cat skills.txt`
-
-</div>
-
-## > skills
-
-**Languages**
-
-`Python` `JavaScript` `TypeScript` `SQL`
-
-**AI / GenAI**
-
-`LLMs` `RAG` `LangChain` `LangGraph` `Claude API` `OpenAI API`
-
-`Prompt Engineering` `Embeddings` `Semantic Search` `Reranking`
-
-`Vector Databases` `NLP` `Computer Vision`
-
-**Frameworks**
-
-`React` `Flask` `TensorFlow` `PyTorch` `Scikit-learn` `OpenCV`
-
-**Databases / Infrastructure**
-
-`MongoDB` `Pinecone` `Redis` `Docker` `Kubernetes` `AWS`
-
-**Developer Tools**
-
-`Git` `GitHub` `REST APIs` `Socket.IO` `JWT`
-
----
-
-<div align="center">
-
-### `sachin@github ~ $ cat experience.txt`
-
-</div>
-
-## > experience
-
-### Junior Full Stack AI Engineer - Budhhi Technologies
-
-Building AI-powered full-stack applications involving:
-
-- AI profile matching
-- Semantic search
-- NLP-based resume parsing
-- ATS scoring
-- AI workflows
-- Backend APIs
-- React-based interfaces
-- MongoDB data systems
-- OpenAI-powered applications
-- Pinecone vector search
-
----
-
-<div align="center">
-
-### `sachin@github ~ $ ls projects/`
-
-</div>
-
-## > projects
-
-### DocuTrust - AI Document Intelligence
-
-RAG-powered document intelligence platform using LLMs, embeddings, vector search and NLP to retrieve and understand information from documents.
-
-### AI-Powered Talent Matching Platform
-
-Full-stack AI platform for intelligent candidate matching, semantic search, resume parsing and ATS scoring.
-
-### AI Assistant for Visual Learning
-
-Multimodal learning assistant combining speech-to-text, computer vision, OCR and summarization to transform educational videos into structured learning content.
-
-### Stock Price Prediction
-
-Machine learning project using LSTM-based time-series prediction techniques for stock market analysis.
-
-### Real-Time Face Detection
-
-Computer vision application using OpenCV and Haar Cascade-based face detection.
-
----
-
-<div align="center">
-
-### `sachin@github ~ $ cat education.txt`
-
-</div>
-
-## > education
-
-**B.E. Artificial Intelligence & Data Science**
-
-Global Academy of Technology, Bengaluru
-
-CGPA: **9.07 / 10**
-
----
-
-<div align="center">
-
-### `sachin@github ~ $ git status`
-
-<br>
-
-**STATUS: ONLINE**
-
-<br>
-
-`AI` `RAG` `LLMs` `Full Stack` `Automation` `Semantic Search` `Generative AI`
+<picture>
+  <source media="(max-width: 600px)" srcset="https://raw.githubusercontent.com/sachin-2004jlr/sachin-2004jlr/main/assets/about-mobile.svg">
+  <img src="assets/about.svg" width="100%" alt="About: Full Stack AI Engineer building intelligent, production-grade applications, from model to interface. Based in Bengaluru, India; B.E. AI and Data Science, CGPA 9.07; open to opportunities.">
+</picture>
 
 <br><br>
 
-<code>sachin@github ~ $ echo "let's build something intelligent."</code>
+<picture>
+  <source media="(max-width: 600px)" srcset="https://raw.githubusercontent.com/sachin-2004jlr/sachin-2004jlr/main/assets/experience-mobile.svg">
+  <img src="assets/experience.svg" width="100%" alt="Career: Junior Full Stack AI Engineer at Budhhi Technologies (Aug 2026 – present); Associate Software Developer intern at Budhhi (Feb – Aug 2026); Machine Learning Intern at Acmegrade (Apr – Jun 2025); B.E. AI and Data Science at Global Academy of Technology, CGPA 9.07; Pre-University at Sri Siddaganga PU College, 92.5%.">
+</picture>
 
 <br><br>
 
-**Thanks for visiting my profile.**
+<picture>
+  <source media="(max-width: 600px)" srcset="https://raw.githubusercontent.com/sachin-2004jlr/sachin-2004jlr/main/assets/projects-mobile.svg">
+  <img src="assets/projects.svg" width="100%" alt="Projects: TalentMatch AI, DocuTrust, WardrobeAI, RAG Streamlit App, Video Summarizer, QA Bot, Cancer Detection, Customer Review Sentiment, Stock Price Prediction and EDA, Real-Time Face Detection, Titanic Survival Prediction.">
+</picture>
+
+<sub>
+<b>open source</b> · <a href="https://github.com/sachin-2004jlr/rag-streamlit-app">rag-streamlit-app</a> · <a href="https://github.com/sachin-2004jlr/Video_summarizer">video-summarizer</a> · <a href="https://github.com/sachin-2004jlr/qa-bot">qa-bot</a> · <a href="https://github.com/sachin-2004jlr/cancer-detection-ml">cancer-detection-ml</a> · <a href="https://github.com/sachin-2004jlr/Sentimental-Analysis-of-Customer-Reviews">review-sentiment</a> · <a href="https://github.com/sachin-2004jlr/stock-price-prediction-eda">stock-prediction-eda</a> · <a href="https://github.com/sachin-2004jlr/FACE-DETECTION">face-detection</a> · <a href="https://github.com/sachin-2004jlr/Titanic_Survival_prediction">titanic-survival</a>
+</sub>
+
+<br><br>
+
+<picture>
+  <source media="(max-width: 600px)" srcset="https://raw.githubusercontent.com/sachin-2004jlr/sachin-2004jlr/main/assets/stack-mobile.svg">
+  <img src="assets/stack.svg" width="100%" alt="Tech stack: Generative AI, RAG, agents, MCP; Python, JavaScript, TypeScript; React, Next.js, Flask, FastAPI; LangChain, LangGraph, Claude and OpenAI APIs, Gemini, TensorFlow, PyTorch; MongoDB, Pinecone, Qdrant, Redis, Docker, Kubernetes, AWS.">
+</picture>
+
+<br><br>
+
+<img src="https://skillicons.dev/icons?i=py,ts,js,react,nextjs,flask,fastapi,threejs,tailwind,mongodb,redis,docker,kubernetes,aws,gcp,tensorflow,pytorch,sklearn,opencv,git,github&perline=11" width="88%" alt="Python, TypeScript, JavaScript, React, Next.js, Flask, FastAPI, Three.js, Tailwind, MongoDB, Redis, Docker, Kubernetes, AWS, Google Cloud, TensorFlow, PyTorch, scikit-learn, OpenCV, Git, GitHub">
+
+<br><br>
+
+<picture>
+  <source media="(max-width: 600px)" srcset="https://raw.githubusercontent.com/sachin-2004jlr/sachin-2004jlr/main/assets/contributions-mobile.svg">
+  <img src="assets/contributions.svg" width="100%" alt="GitHub contributions per year, refreshed automatically by GitHub Actions.">
+</picture>
+
+<br><br>
+
+<picture>
+  <source media="(max-width: 600px)" srcset="https://raw.githubusercontent.com/sachin-2004jlr/sachin-2004jlr/main/assets/certifications-mobile.svg">
+  <img src="assets/certifications.svg" width="100%" alt="22 certifications: 12 from Anthropic (Claude API, Amazon Bedrock, MCP, Claude Code and AI Fluency), 7 from Google Cloud, plus Deloitte, Acmegrade and Infosys. Let's build something intelligent.">
+</picture>
+
+<sub>certificate verification links are on my <a href="https://sachin-2004jlr.github.io/My-Portifolio/">portfolio</a></sub>
 
 </div>

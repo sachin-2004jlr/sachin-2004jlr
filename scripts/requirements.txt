@@ -1,6 +1,10 @@
+# Contribution graph (also installed by the GitHub Action)
 requests==2.32.3
 beautifulsoup4==4.12.3
+
+# Portrait (local only): make_portrait.py also needs the u2net_human_seg.onnx
+# model in ~/.u2net (rembg downloads it on first use)
 pillow
 numpy
 opencv-python
-rembg
+onnxruntime

@@ -1,0 +1,53 @@
+name: Update contribution graph
+
+on:
+  schedule:
+    - cron: "17 */6 * * *" # every 6 hours, so each day is picked up promptly
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/fetch_contributions.py"
+      - "scripts/render_contributions.py"
+      - "scripts/svgkit.py"
+      - ".github/workflows/update-contributions.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-contributions
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install requests==2.32.3 beautifulsoup4==4.12.3
+
+      - name: Fetch contributions and render graph
+        run: |
+          python scripts/fetch_contributions.py
+          python scripts/render_contributions.py
+
+      - name: Commit if the graph changed
+        run: |
+          files="data/contributions.json assets/contributions.svg assets/contributions-mobile.svg"
+          # Skip timestamp-only churn; commit only when the data actually moved.
+          if git diff --quiet -I '"generated_at"' -I 'synced 20' -- $files; then
+            echo "No changes in contributions."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add $files
+          git commit -m "chore: refresh contribution graph"
+          git pull --rebase
+          git push

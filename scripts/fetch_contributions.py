@@ -1,17 +1,23 @@
+"""Fetch the GitHub contribution calendar for every year since the account
+was created into data/contributions.json.
+
+Runs every few hours in .github/workflows/update-contributions.yml.
+
+    python scripts/fetch_contributions.py
+"""
+
 import json
 import re
+from datetime import date, datetime, timedelta, timezone
+from pathlib import Path
+
 import requests
 from bs4 import BeautifulSoup
-from pathlib import Path
-from datetime import datetime
-
 
 USERNAME = "sachin-2004jlr"
-
+FIRST_YEAR = 2025  # account created April 2025
 URL = f"https://github.com/users/{USERNAME}/contributions"
-
 OUTPUT_FILE = Path("data/contributions.json")
-
 
 HEADERS = {
     "User-Agent": (
@@ -22,367 +28,102 @@ HEADERS = {
 }
 
 
-def parse_contribution_count(text):
-    """
-    Extract contribution count from GitHub tooltip text.
+def parse_count(label):
+    """'12 contributions on Feb 8th.' -> 12, 'No contributions ...' -> 0."""
+    match = re.search(r"([\d,]+)\s+contributions?", label or "", re.IGNORECASE)
+    return int(match.group(1).replace(",", "")) if match else 0
 
-    Examples:
 
-    "No contributions on October 5th."
-        -> 0
-
-    "1 contribution on January 5th."
-        -> 1
-
-    "12 contributions on February 8th."
-        -> 12
-    """
-
-    text = text.strip()
-
-    if not text:
-        return 0
-
-    if "No contributions" in text:
-        return 0
-
-    match = re.search(
-        r"([\d,]+)\s+contributions?",
-        text,
-        re.IGNORECASE
+def fetch_year(year):
+    """Return (days, reported_total) for one calendar year."""
+    response = requests.get(
+        URL,
+        params={"from": f"{year}-01-01", "to": f"{year}-12-31"},
+        headers=HEADERS,
+        timeout=30,
     )
+    response.raise_for_status()
+    soup = BeautifulSoup(response.text, "html.parser")
 
-    if match:
-        return int(match.group(1).replace(",", ""))
-
-    return 0
-
-
-def calculate_streaks(contributions):
-    """
-    Calculate current and longest contribution streak.
-    """
-
-    sorted_days = sorted(
-        contributions,
-        key=lambda x: x["date"]
-    )
-
-    # Only count days where contribution count > 0
-    active_dates = {
-        datetime.strptime(day["date"], "%Y-%m-%d").date()
-        for day in sorted_days
-        if day["count"] > 0
+    tooltips = {
+        tip.get("for"): tip.get_text(" ", strip=True)
+        for tip in soup.find_all("tool-tip")
+        if tip.get("for")
     }
+    days = {}
+    for cell in soup.select("td.ContributionCalendar-day[data-date]"):
+        if cell["data-date"].startswith(str(year)):
+            days[cell["data-date"]] = {
+                "date": cell["data-date"],
+                "count": parse_count(tooltips.get(cell.get("id"))),
+                "level": int(cell.get("data-level", 0)),
+            }
+    if not days:
+        raise RuntimeError(f"No contribution cells found for {year}.")
 
-    if not active_dates:
-        return 0, 0
+    heading = soup.find(id="js-contribution-activity-description")
+    reported = parse_count(heading.get_text(" ", strip=True)) if heading else None
+    return [days[k] for k in sorted(days)], reported
 
-    # Longest streak
-    longest_streak = 0
-    current_streak_length = 0
 
-    previous_date = None
+def streaks(days, today):
+    """Current and longest daily streak, up to and including today."""
+    active = {date.fromisoformat(d["date"]) for d in days if d["count"] > 0}
+    longest = run = 0
+    prev = None
+    for day in sorted(active):
+        run = run + 1 if prev and (day - prev).days == 1 else 1
+        longest = max(longest, run)
+        prev = day
 
-    for date in sorted(active_dates):
-
-        if previous_date is not None:
-            difference = (date - previous_date).days
-
-            if difference == 1:
-                current_streak_length += 1
-            else:
-                current_streak_length = 1
-        else:
-            current_streak_length = 1
-
-        longest_streak = max(
-            longest_streak,
-            current_streak_length
-        )
-
-        previous_date = date
-
-    # Current streak
-    today = datetime.now().date()
-
-    current_streak = 0
-    check_date = today
-
-    # GitHub may contain today's cell even if there are
-    # no contributions yet.
-
-    while check_date in active_dates:
-        current_streak += 1
-        check_date = check_date.fromordinal(
-            check_date.toordinal() - 1
-        )
-
-    # If today has no contribution, check yesterday.
-    if current_streak == 0:
-        yesterday = today.fromordinal(
-            today.toordinal() - 1
-        )
-
-        if yesterday in active_dates:
-            current_streak = 1
-            check_date = yesterday.fromordinal(
-                yesterday.toordinal() - 1
-            )
-
-            while check_date in active_dates:
-                current_streak += 1
-                check_date = check_date.fromordinal(
-                    check_date.toordinal() - 1
-                )
-
-    return current_streak, longest_streak
+    # Contributors ahead of UTC (IST is +5:30) may already have "tomorrow";
+    # an empty today still leaves yesterday's streak alive.
+    cursor = today + timedelta(days=1)
+    while cursor not in active and cursor >= today:
+        cursor -= timedelta(days=1)
+    current = 0
+    while cursor in active:
+        current += 1
+        cursor -= timedelta(days=1)
+    return current, longest
 
 
 def main():
+    now = datetime.now(timezone.utc)
+    today = now.date()
 
-    print(f"Fetching contributions for @{USERNAME}...")
+    years, all_days = [], []
+    for year in range(now.year, FIRST_YEAR - 1, -1):
+        print(f"Fetching {year}...")
+        days, reported = fetch_year(year)
+        total = sum(d["count"] for d in days)
+        if reported is not None and reported != total:
+            raise RuntimeError(f"{year}: GitHub reports {reported} but day cells sum to {total}")
+        years.append({"year": year, "total": total, "days": days})
+        all_days.extend(days)
+        print(f"  {total} contributions")
 
-    response = requests.get(
-        URL,
-        headers=HEADERS,
-        timeout=30
-    )
-
-    response.raise_for_status()
-
-    soup = BeautifulSoup(
-        response.text,
-        "html.parser"
-    )
-
-    # --------------------------------------------------
-    # Find contribution cells
-    # --------------------------------------------------
-
-    cells = soup.select(
-        "td.ContributionCalendar-day"
-    )
-
-    print(
-        f"Found {len(cells)} contribution cells."
-    )
-
-    if not cells:
-        raise RuntimeError(
-            "Could not find GitHub contribution cells."
-        )
-
-    # --------------------------------------------------
-    # Build tooltip lookup
-    #
-    # GitHub stores the contribution count in a
-    # separate <tool-tip> element.
-    #
-    # Example:
-    #
-    # <tool-tip for="contribution-day-component-0-0">
-    #     No contributions on October 5th.
-    # </tool-tip>
-    # --------------------------------------------------
-
-    tooltip_map = {}
-
-    tooltips = soup.find_all("tool-tip")
-
-    print(
-        f"Found {len(tooltips)} contribution tooltips."
-    )
-
-    for tooltip in tooltips:
-
-        cell_id = tooltip.get("for")
-
-        if not cell_id:
-            continue
-
-        tooltip_text = tooltip.get_text(
-            " ",
-            strip=True
-        )
-
-        tooltip_map[cell_id] = tooltip_text
-
-    # --------------------------------------------------
-    # Extract contribution data
-    # --------------------------------------------------
-
-    contributions = []
-
-    for cell in cells:
-
-        date_string = cell.get("data-date")
-
-        level_string = cell.get(
-            "data-level",
-            "0"
-        )
-
-        cell_id = cell.get("id")
-
-        if not date_string:
-            continue
-
-        # Convert GitHub level into integer
-        try:
-            level = int(level_string)
-        except ValueError:
-            level = 0
-
-        # Find matching tooltip
-        tooltip_text = tooltip_map.get(
-            cell_id,
-            ""
-        )
-
-        # Extract actual contribution count
-        count = parse_contribution_count(
-            tooltip_text
-        )
-
-        contributions.append(
-            {
-                "date": date_string,
-                "count": count,
-                "level": level
-            }
-        )
-
-    # --------------------------------------------------
-    # Sort by date
-    # --------------------------------------------------
-
-    contributions.sort(
-        key=lambda x: x["date"]
-    )
-
-    # --------------------------------------------------
-    # Calculate statistics
-    # --------------------------------------------------
-
-    total_contributions = sum(
-        day["count"]
-        for day in contributions
-    )
-
-    current_streak, longest_streak = (
-        calculate_streaks(contributions)
-    )
-
-    best_day = max(
-        contributions,
-        key=lambda x: x["count"]
-    )
-
-    # --------------------------------------------------
-    # Build final JSON
-    # --------------------------------------------------
+    all_days.sort(key=lambda d: d["date"])
+    past = [d for d in all_days if date.fromisoformat(d["date"]) <= today + timedelta(days=1)]
+    current, longest = streaks(past, today)
+    best = max(past, key=lambda d: (d["count"], d["date"]))
 
     output = {
         "username": USERNAME,
-        "generated_at": datetime.now().isoformat(),
-        "total_contributions": total_contributions,
-        "current_streak": current_streak,
-        "longest_streak": longest_streak,
-        "best_day": best_day,
-        "contributions": contributions
+        "generated_at": now.isoformat(timespec="seconds"),
+        "total_contributions": sum(y["total"] for y in years),
+        "active_days": sum(1 for d in past if d["count"] > 0),
+        "current_streak": current,
+        "longest_streak": longest,
+        "best_day": best,
+        "years": years,
     }
+    OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)
+    OUTPUT_FILE.write_text(json.dumps(output, indent=1), encoding="utf-8")
 
-    # --------------------------------------------------
-    # Create data directory
-    # --------------------------------------------------
-
-    OUTPUT_FILE.parent.mkdir(
-        parents=True,
-        exist_ok=True
-    )
-
-    # --------------------------------------------------
-    # Save JSON
-    # --------------------------------------------------
-
-    with OUTPUT_FILE.open(
-        "w",
-        encoding="utf-8"
-    ) as file:
-
-        json.dump(
-            output,
-            file,
-            indent=2
-        )
-
-    # --------------------------------------------------
-    # Display results
-    # --------------------------------------------------
-
-    print()
-    print("=" * 40)
-    print("Contribution data successfully saved!")
-    print("=" * 40)
-
-    print(
-        f"Contribution days : {len(contributions)}"
-    )
-
-    print(
-        f"Total contributions: {total_contributions}"
-    )
-
-    print(
-        f"Current streak    : {current_streak} days"
-    )
-
-    print(
-        f"Longest streak    : {longest_streak} days"
-    )
-
-    print(
-        "Best day          : "
-        f"{best_day['date']} "
-        f"({best_day['count']} contributions)"
-    )
-
-    print(
-        f"Output            : {OUTPUT_FILE}"
-    )
-
-    # --------------------------------------------------
-    # Extra verification
-    # --------------------------------------------------
-
-    non_zero_days = [
-        day
-        for day in contributions
-        if day["count"] > 0
-    ]
-
-    print()
-    print("=" * 40)
-    print("Verification")
-    print("=" * 40)
-
-    print(
-        f"Days with contributions: "
-        f"{len(non_zero_days)}"
-    )
-
-    print()
-
-    print("Sample contribution days:")
-
-    for day in non_zero_days[:10]:
-
-        print(
-            f"  {day['date']} "
-            f"-> {day['count']} contributions "
-            f"(level {day['level']})"
-        )
+    print(f"all-time {output['total_contributions']} · active days {output['active_days']} · "
+          f"streak {current} (longest {longest}) · best day {best['date']} ({best['count']})")
+    print(f"Saved {OUTPUT_FILE}")
 
 
 if __name__ == "__main__":
