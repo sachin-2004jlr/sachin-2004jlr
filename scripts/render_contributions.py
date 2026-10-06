@@ -14,7 +14,7 @@ from svgkit import C, DESKTOP, MOBILE, command, cw, fade, spans, stamp_readme, t
 INPUT_FILE = Path("data/contributions.json")
 OUT = Path("assets")
 
-PALETTE = ["#161b22", "#1d2838", "#2b405c", "#47648a", "#7f9bbd"]  # steel-blue scale
+PALETTE = ["#1a1625", "#35265c", "#5a3c9e", "#8b5cf6", "#c4a6ff"]  # royal-purple scale
 
 
 def fmt_day(iso):

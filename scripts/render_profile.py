@@ -38,10 +38,14 @@ STROKES = {  # box-drawing glyph -> segments from the cell centre, in half-cells
 }
 
 
-def gradient(gid, x1, x2):
+def gradient(gid, x1, x2, y1, y2):
+    """Light-to-deep gold fill plus a white sheen over the top half for gloss."""
     return (f'<defs><linearGradient id="{gid}" gradientUnits="userSpaceOnUse" x1="{x1:.0f}" y1="0" x2="{x2:.0f}" y2="0">'
-            f'<stop offset="0%" stop-color="{C["text"]}"/><stop offset="100%" stop-color="{C["accent"]}"/>'
-            "</linearGradient></defs>")
+            '<stop offset="0%" stop-color="#f7de92"/><stop offset="55%" stop-color="#e8bb4f"/>'
+            '<stop offset="100%" stop-color="#c8962c"/></linearGradient>'
+            f'<linearGradient id="{gid}-gloss" gradientUnits="userSpaceOnUse" x1="0" y1="{y1:.0f}" x2="0" y2="{y2:.0f}">'
+            '<stop offset="0%" stop-color="#ffffff" stop-opacity=".38"/><stop offset="48%" stop-color="#ffffff" stop-opacity=".08"/>'
+            '<stop offset="52%" stop-color="#ffffff" stop-opacity="0"/></linearGradient></defs>')
 
 
 def banner_svg(word, x, y, width, start, gid="name"):
@@ -53,7 +57,7 @@ def banner_svg(word, x, y, width, start, gid="name"):
     bw = width / len(rows[0])
     bh = bw * 1.9
     hw, hh = bw / 2, bh / 2
-    out = [gradient(gid, x, x + width)]
+    out = [gradient(gid, x, x + width, y, y + 6 * bh)]
     for r, row in enumerate(rows):
         blocks, lines = [], []
         for c, ch in enumerate(row):
@@ -66,8 +70,9 @@ def banner_svg(word, x, y, width, start, gid="name"):
         box = f'<rect x="{x:.1f}" y="{y + r * bh:.1f}" width="{width:.1f}" height="{bh:.1f}" fill="none"/>'
         out.append(
             f'<g style="{type_style(len(row), 0.5, start + r * 0.07)}">{box}'
-            f'<path d="{"".join(lines)}" stroke="{C["dim"]}" stroke-width="1.5" opacity=".9" fill="none"/>'
-            f'<path d="{"".join(blocks)}" fill="url(#{gid})"/></g>'
+            f'<path d="{"".join(lines)}" stroke="{C["accent_alt"]}" stroke-width="1.6" opacity=".85" fill="none"/>'
+            f'<path d="{"".join(blocks)}" fill="url(#{gid})"/>'
+            f'<path d="{"".join(blocks)}" fill="url(#{gid}-gloss)"/></g>'
         )
     return "".join(out), 6 * bh
 
@@ -97,7 +102,7 @@ def portrait_svg(x, y, width):
         # Scrambled glyphs flash in the same cells first, then the real row resolves.
         noise = "".join(" " if ch == " " else rng.choice(GLITCH) for ch in line)
         glitch = [text(x + m.start() * width / cols, y + (r + 1) * step, m.group(), round(step, 2),
-                       "#4a5566", weight=700, squeeze=True) for m in re.finditer(r"\S+", noise)]
+                       "#5b3f99", weight=700, squeeze=True) for m in re.finditer(r"\S+", noise)]
         out.append(f'<g class="scramble" style="animation-delay:{delay:.3f}s">{"".join(glitch)}</g>')
         out.append(f'<g class="decode" style="animation-delay:{delay + 0.22:.3f}s">{"".join(runs)}</g>')
     return "".join(out), rows * step
@@ -106,7 +111,7 @@ def portrait_svg(x, y, width):
 def hud(x0, y0, x1, y1):
     out = []
     for cx, cy, dx, dy in [(x0, y0, 1, 1), (x1, y0, -1, 1), (x0, y1, 1, -1), (x1, y1, -1, -1)]:
-        out.append(f'<path d="M{cx:.1f} {cy + 14 * dy:.1f}V{cy:.1f}H{cx + 14 * dx:.1f}" fill="none" stroke="{C["accent"]}" stroke-width="1.5" opacity=".55"/>')
+        out.append(f'<path d="M{cx:.1f} {cy + 14 * dy:.1f}V{cy:.1f}H{cx + 14 * dx:.1f}" fill="none" stroke="{C["warm"]}" stroke-width="1.5" opacity=".7"/>')
     label = f"subject: sachin_s · ascii {PORTRAIT['cols']}x{PORTRAIT['rows']} · bg removed"
     out.append(text(x0, y1 + 20, label, 11, C["muted"]))
     return fade(0.1, "".join(out))
@@ -193,8 +198,8 @@ def hero(w):
     parts.append(
         f'<rect y="{sb}" width="{w}" height="28" fill="{C["bar"]}"/>'
         f'<rect y="{sb}" width="{w}" height="1" fill="{C["border"]}"/>'
-        f'<rect x="0" y="{sb}" width="96" height="28" fill="#27303d"/>'
-        + text(14, sb + 18, "PORTFOLIO", 12, C["text"], weight=700)
+        f'<rect x="0" y="{sb}" width="96" height="28" fill="{C["warm"]}"/>'
+        + text(14, sb + 18, "PORTFOLIO", 12, "#1a1424", weight=700)
         + spans(110, sb + 18, tabs, 12)
         + text(w - 16, sb + 18, "Bengaluru, IN", 12, C["muted"], anchor="end")
     )
