@@ -5,9 +5,14 @@ keeps CSS animations inside images. Text widths are pinned with textLength so
 layouts are identical whatever monospace font the viewer has installed.
 """
 
+import hashlib
+import re
 from html import escape
+from pathlib import Path
 
 DESKTOP, MOBILE = 960, 480
+README = Path("README.md")
+RAW = "https://raw.githubusercontent.com/sachin-2004jlr/sachin-2004jlr/main/"
 FONT = (
     "'JetBrains Mono','SF Mono','Cascadia Code',Menlo,Consolas,"
     "'DejaVu Sans Mono','Liberation Mono',monospace"
@@ -185,3 +190,19 @@ def window(w, h, title, body, extra_css="", label=""):
 <rect x=".5" y=".5" width="{w - 1}" height="{h - 1}" rx="14" fill="none" stroke="{C["border"]}"/>
 </svg>
 """
+
+
+def stamp_readme(paths):
+    """Point README.md at each asset by absolute URL plus a content hash.
+
+    GitHub's /raw/ redirect drops query strings and raw files are cached for
+    five minutes, so plain relative links can show a stale panel after an
+    update. A new ?v= per change gives every version its own cache entry.
+    """
+    text = README.read_text(encoding="utf-8")
+    for path in paths:
+        name = Path(path).as_posix()
+        digest = hashlib.sha1(Path(path).read_bytes()).hexdigest()[:10]
+        pattern = r"(?:" + re.escape(RAW) + r")?" + re.escape(name) + r"(?:\?v=[0-9a-f]+)?"
+        text = re.sub(pattern, f"{RAW}{name}?v={digest}", text)
+    README.write_bytes(text.encode("utf-8"))

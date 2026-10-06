@@ -8,8 +8,8 @@
 <div align="center">
 
 <picture>
-  <source media="(max-width: 600px)" srcset="https://raw.githubusercontent.com/sachin-2004jlr/sachin-2004jlr/main/assets/hero-mobile.svg">
-  <img src="assets/hero.svg" width="100%" alt="Sachin S, Junior Full Stack AI Engineer at Budhhi Technologies. Animated terminal with an ASCII portrait.">
+  <source media="(max-width: 600px)" srcset="https://raw.githubusercontent.com/sachin-2004jlr/sachin-2004jlr/main/assets/hero-mobile.svg?v=5d809aefff">
+  <img src="https://raw.githubusercontent.com/sachin-2004jlr/sachin-2004jlr/main/assets/hero.svg?v=e4a7969220" width="100%" alt="Sachin S, Junior Full Stack AI Engineer at Budhhi Technologies. Animated terminal with an ASCII portrait.">
 </picture>
 
 <br><br>
@@ -19,22 +19,22 @@
 <br><br>
 
 <picture>
-  <source media="(max-width: 600px)" srcset="https://raw.githubusercontent.com/sachin-2004jlr/sachin-2004jlr/main/assets/about-mobile.svg">
-  <img src="assets/about.svg" width="100%" alt="About: Full Stack AI Engineer building intelligent, production-grade applications, from model to interface. Based in Bengaluru, India; B.E. AI and Data Science, CGPA 9.07; open to opportunities.">
+  <source media="(max-width: 600px)" srcset="https://raw.githubusercontent.com/sachin-2004jlr/sachin-2004jlr/main/assets/about-mobile.svg?v=df310699c6">
+  <img src="https://raw.githubusercontent.com/sachin-2004jlr/sachin-2004jlr/main/assets/about.svg?v=3a90a1045b" width="100%" alt="About: Full Stack AI Engineer building intelligent, production-grade applications, from model to interface. Based in Bengaluru, India; B.E. AI and Data Science, CGPA 9.07; open to opportunities.">
 </picture>
 
 <br><br>
 
 <picture>
-  <source media="(max-width: 600px)" srcset="https://raw.githubusercontent.com/sachin-2004jlr/sachin-2004jlr/main/assets/experience-mobile.svg">
-  <img src="assets/experience.svg" width="100%" alt="Career: Junior Full Stack AI Engineer at Budhhi Technologies (Aug 2026 – present); Associate Software Developer intern at Budhhi (Feb – Aug 2026); Machine Learning Intern at Acmegrade (Apr – Jun 2025); B.E. AI and Data Science at Global Academy of Technology, CGPA 9.07; Pre-University at Sri Siddaganga PU College, 92.5%.">
+  <source media="(max-width: 600px)" srcset="https://raw.githubusercontent.com/sachin-2004jlr/sachin-2004jlr/main/assets/experience-mobile.svg?v=908c0abd2a">
+  <img src="https://raw.githubusercontent.com/sachin-2004jlr/sachin-2004jlr/main/assets/experience.svg?v=5ffb1c3506" width="100%" alt="Career: Junior Full Stack AI Engineer at Budhhi Technologies (Aug 2026 – present); Associate Software Developer intern at Budhhi (Feb – Aug 2026); Machine Learning Intern at Acmegrade (Apr – Jun 2025); B.E. AI and Data Science at Global Academy of Technology, CGPA 9.07; Pre-University at Sri Siddaganga PU College, 92.5%.">
 </picture>
 
 <br><br>
 
 <picture>
-  <source media="(max-width: 600px)" srcset="https://raw.githubusercontent.com/sachin-2004jlr/sachin-2004jlr/main/assets/projects-mobile.svg">
-  <img src="assets/projects.svg" width="100%" alt="Projects: TalentMatch AI, DocuTrust, WardrobeAI, RAG Streamlit App, Video Summarizer, QA Bot, Cancer Detection, Customer Review Sentiment, Stock Price Prediction and EDA, Real-Time Face Detection, Titanic Survival Prediction.">
+  <source media="(max-width: 600px)" srcset="https://raw.githubusercontent.com/sachin-2004jlr/sachin-2004jlr/main/assets/projects-mobile.svg?v=c0528e8de5">
+  <img src="https://raw.githubusercontent.com/sachin-2004jlr/sachin-2004jlr/main/assets/projects.svg?v=57474ede71" width="100%" alt="Projects: TalentMatch AI, DocuTrust, WardrobeAI, RAG Streamlit App, Video Summarizer, QA Bot, Cancer Detection, Customer Review Sentiment, Stock Price Prediction and EDA, Real-Time Face Detection, Titanic Survival Prediction.">
 </picture>
 
 <sub>
@@ -44,8 +44,8 @@
 <br><br>
 
 <picture>
-  <source media="(max-width: 600px)" srcset="https://raw.githubusercontent.com/sachin-2004jlr/sachin-2004jlr/main/assets/stack-mobile.svg">
-  <img src="assets/stack.svg" width="100%" alt="Tech stack: Generative AI, RAG, agents, MCP; Python, JavaScript, TypeScript; React, Next.js, Flask, FastAPI; LangChain, LangGraph, Claude and OpenAI APIs, Gemini, TensorFlow, PyTorch; MongoDB, Pinecone, Qdrant, Redis, Docker, Kubernetes, AWS.">
+  <source media="(max-width: 600px)" srcset="https://raw.githubusercontent.com/sachin-2004jlr/sachin-2004jlr/main/assets/stack-mobile.svg?v=8b38d2579a">
+  <img src="https://raw.githubusercontent.com/sachin-2004jlr/sachin-2004jlr/main/assets/stack.svg?v=53a324babf" width="100%" alt="Tech stack: Generative AI, RAG, agents, MCP; Python, JavaScript, TypeScript; React, Next.js, Flask, FastAPI; LangChain, LangGraph, Claude and OpenAI APIs, Gemini, TensorFlow, PyTorch; MongoDB, Pinecone, Qdrant, Redis, Docker, Kubernetes, AWS.">
 </picture>
 
 <br><br>
@@ -55,15 +55,15 @@
 <br><br>
 
 <picture>
-  <source media="(max-width: 600px)" srcset="https://raw.githubusercontent.com/sachin-2004jlr/sachin-2004jlr/main/assets/contributions-mobile.svg">
-  <img src="assets/contributions.svg" width="100%" alt="GitHub contributions per year, refreshed automatically by GitHub Actions.">
+  <source media="(max-width: 600px)" srcset="https://raw.githubusercontent.com/sachin-2004jlr/sachin-2004jlr/main/assets/contributions-mobile.svg?v=e45e51c6a6">
+  <img src="https://raw.githubusercontent.com/sachin-2004jlr/sachin-2004jlr/main/assets/contributions.svg?v=755f52b43d" width="100%" alt="GitHub contributions per year, refreshed automatically by GitHub Actions.">
 </picture>
 
 <br><br>
 
 <picture>
-  <source media="(max-width: 600px)" srcset="https://raw.githubusercontent.com/sachin-2004jlr/sachin-2004jlr/main/assets/certifications-mobile.svg">
-  <img src="assets/certifications.svg" width="100%" alt="22 certifications: 12 from Anthropic (Claude API, Amazon Bedrock, MCP, Claude Code and AI Fluency), 7 from Google Cloud, plus Deloitte, Acmegrade and Infosys. Let's build something intelligent.">
+  <source media="(max-width: 600px)" srcset="https://raw.githubusercontent.com/sachin-2004jlr/sachin-2004jlr/main/assets/certifications-mobile.svg?v=79fdfc4dbf">
+  <img src="https://raw.githubusercontent.com/sachin-2004jlr/sachin-2004jlr/main/assets/certifications.svg?v=5832784723" width="100%" alt="22 certifications: 12 from Anthropic (Claude API, Amazon Bedrock, MCP, Claude Code and AI Fluency), 7 from Google Cloud, plus Deloitte, Acmegrade and Infosys. Let's build something intelligent.">
 </picture>
 
 <sub>certificate verification links are on my <a href="https://sachin-2004jlr.github.io/My-Portifolio/">portfolio</a></sub>

@@ -9,7 +9,7 @@ import json
 from datetime import date, datetime, timedelta
 from pathlib import Path
 
-from svgkit import C, DESKTOP, MOBILE, command, cw, fade, spans, text, window
+from svgkit import C, DESKTOP, MOBILE, command, cw, fade, spans, stamp_readme, text, window
 
 INPUT_FILE = Path("data/contributions.json")
 OUT = Path("assets")
@@ -127,10 +127,13 @@ def render(data, w):
 def main():
     data = json.loads(INPUT_FILE.read_text(encoding="utf-8"))
     OUT.mkdir(exist_ok=True)
+    written = []
     for suffix, width in (("", DESKTOP), ("-mobile", MOBILE)):
         path = OUT / f"contributions{suffix}.svg"
         path.write_text(render(data, width), encoding="utf-8")
+        written.append(path)
         print(f"Created {path}")
+    stamp_readme(written)
 
 
 if __name__ == "__main__":

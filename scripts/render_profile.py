@@ -14,7 +14,7 @@ import textwrap
 from pathlib import Path
 
 from svgkit import (C, DESKTOP, MOBILE, command, cursor, cw, fade, fits,
-                    spans, text, type_style, typed, window)
+                    spans, stamp_readme, text, type_style, typed, window)
 
 OUT = Path("assets")
 PROFILE = json.loads(Path("data/profile.json").read_text(encoding="utf-8"))
@@ -500,11 +500,14 @@ PANELS = {"hero": hero, "about": about, "experience": experience,
 
 def main():
     OUT.mkdir(exist_ok=True)
+    written = []
     for name, fn in PANELS.items():
         for suffix, width in (("", DESKTOP), ("-mobile", MOBILE)):
             path = OUT / f"{name}{suffix}.svg"
             path.write_text(fn(width), encoding="utf-8")
+            written.append(path)
             print(f"Created {path}")
+    stamp_readme(written)
 
 
 if __name__ == "__main__":

@@ -2,15 +2,10 @@ name: Update contribution graph
 
 on:
   schedule:
-    - cron: "17 */6 * * *" # every 6 hours, so each day is picked up promptly
-  workflow_dispatch:
+    - cron: "7 * * * *" # hourly: picks up work pushed to any repo, private included
   push:
-    branches: [main]
-    paths:
-      - "scripts/fetch_contributions.py"
-      - "scripts/render_contributions.py"
-      - "scripts/svgkit.py"
-      - ".github/workflows/update-contributions.yml"
+    branches: [main] # bot pushes use GITHUB_TOKEN, which never re-triggers this
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -32,6 +27,10 @@ jobs:
       - name: Install dependencies
         run: pip install requests==2.32.3 beautifulsoup4==4.12.3
 
+      - name: Let GitHub count the commit that triggered this run
+        if: github.event_name == 'push'
+        run: sleep 60
+
       - name: Fetch contributions and render graph
         run: |
           python scripts/fetch_contributions.py
@@ -47,7 +46,8 @@ jobs:
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add $files
+          # README carries the content-hash links that bust image caches.
+          git add $files README.md
           git commit -m "chore: refresh contribution graph"
           git pull --rebase
           git push
