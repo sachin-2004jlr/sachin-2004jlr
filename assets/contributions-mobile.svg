@@ -347,7 +347,7 @@
 <rect class="cell" x="347.9" y="346.0" width="5.9" height="5.9" rx="1.2" fill="#161b22" style="animation-delay:2.905s"><title>0 on 2026-10-04</title></rect>
 <rect class="cell" x="347.9" y="353.3" width="5.9" height="5.9" rx="1.2" fill="#0e4429" style="animation-delay:2.905s"><title>1 on 2026-10-05</title></rect>
 <rect class="cell" x="347.9" y="360.6" width="5.9" height="5.9" rx="1.2" fill="#26a641" style="animation-delay:2.905s"><title>18 on 2026-10-06</title></rect>
-<rect class="cell" x="347.9" y="367.9" width="5.9" height="5.9" rx="1.2" fill="none" stroke="#262c36" stroke-width=".8" style="animation-delay:2.905s"/>
+<rect class="cell" x="347.9" y="367.9" width="5.9" height="5.9" rx="1.2" fill="#161b22" style="animation-delay:2.905s"><title>0 on 2026-10-07</title></rect>
 <rect class="cell" x="347.9" y="375.2" width="5.9" height="5.9" rx="1.2" fill="none" stroke="#262c36" stroke-width=".8" style="animation-delay:2.905s"/>
 <rect class="cell" x="347.9" y="382.5" width="5.9" height="5.9" rx="1.2" fill="none" stroke="#262c36" stroke-width=".8" style="animation-delay:2.905s"/>
 <rect class="cell" x="347.9" y="389.8" width="5.9" height="5.9" rx="1.2" fill="none" stroke="#262c36" stroke-width=".8" style="animation-delay:2.905s"/>
@@ -815,7 +815,7 @@
 <rect class="cell" x="435.4" y="488.4" width="5.9" height="5.9" rx="1.2" fill="#161b22" style="animation-delay:4.069s"><title>0 on 2025-12-29</title></rect>
 <rect class="cell" x="435.4" y="495.7" width="5.9" height="5.9" rx="1.2" fill="#161b22" style="animation-delay:4.069s"><title>0 on 2025-12-30</title></rect>
 <rect class="cell" x="435.4" y="503.0" width="5.9" height="5.9" rx="1.2" fill="#161b22" style="animation-delay:4.069s"><title>0 on 2025-12-31</title></rect>
-<g class="in" style="animation-delay:3.82s"><g ><text x="30.0" y="562.1" font-size="11" fill="#3fb950" textLength="13.2" lengthAdjust="spacing">● </text><text x="43.2" y="562.1" font-size="11" fill="#7d8590" textLength="178.2" lengthAdjust="spacing">synced 2026-10-06 17:58 UTC</text></g></g>
+<g class="in" style="animation-delay:3.82s"><g ><text x="30.0" y="562.1" font-size="11" fill="#3fb950" textLength="13.2" lengthAdjust="spacing">● </text><text x="43.2" y="562.1" font-size="11" fill="#7d8590" textLength="178.2" lengthAdjust="spacing">synced 2026-10-07 02:13 UTC</text></g></g>
 <g class="in" style="animation-delay:3.82s"><text x="30.0" y="584.1" font-size="11" fill="#7d8590" textLength="26.4" lengthAdjust="spacing">less</text><rect x="64" y="574.1481481481482" width="12" height="12" rx="2.5" fill="#161b22"/><rect x="80" y="574.1481481481482" width="12" height="12" rx="2.5" fill="#0e4429"/><rect x="96" y="574.1481481481482" width="12" height="12" rx="2.5" fill="#006d32"/><rect x="112" y="574.1481481481482" width="12" height="12" rx="2.5" fill="#26a641"/><rect x="128" y="574.1481481481482" width="12" height="12" rx="2.5" fill="#39d353"/><text x="148.0" y="584.1" font-size="11" fill="#7d8590" textLength="26.4" lengthAdjust="spacing">more</text></g>
   <rect class="sweep" style="--h:672px" y="0" width="480" height="60" fill="url(#beam)"/>
   <rect width="480" height="612" fill="url(#scanlines)"/>
