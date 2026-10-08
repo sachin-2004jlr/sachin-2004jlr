@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="480" height="612" viewBox="0 0 480 612" role="img" aria-label="234 GitHub contributions all-time (2026: 203, 2025: 31); current streak 2 days, longest 4 days.">
-<title>234 GitHub contributions all-time (2026: 203, 2025: 31); current streak 2 days, longest 4 days.</title>
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="612" viewBox="0 0 480 612" role="img" aria-label="234 GitHub contributions all-time (2026: 203, 2025: 31); current streak 0 days, longest 4 days.">
+<title>234 GitHub contributions all-time (2026: 203, 2025: 31); current streak 0 days, longest 4 days.</title>
 <defs>
   <clipPath id="frame"><rect width="480" height="612" rx="14"/></clipPath>
   <pattern id="scanlines" width="4" height="4" patternUnits="userSpaceOnUse">
@@ -48,7 +48,7 @@
 <g class="in" style="animation-delay:0.20s"><g ><text x="30.0" y="76.0" font-size="14" fill="#3fb950" font-weight="700" textLength="50.4" lengthAdjust="spacing">sachin</text><text x="80.4" y="76.0" font-size="14" fill="#7d8590" textLength="8.4" lengthAdjust="spacing">@</text><text x="88.8" y="76.0" font-size="14" fill="#3fb950" font-weight="700" textLength="50.4" lengthAdjust="spacing">budhhi</text><text x="147.6" y="76.0" font-size="14" fill="#79c0ff" textLength="8.4" lengthAdjust="spacing">~</text><text x="156.0" y="76.0" font-size="14" fill="#7d8590" textLength="25.2" lengthAdjust="spacing"> $ </text></g></g><g style="animation: type 1.75s steps(56, end) 0.45s both"><rect x="181.2" y="62.0" width="235.2" height="18.2" fill="none"/><text x="181.2" y="76.0" font-size="14" fill="#e6edf3" textLength="235.2" lengthAdjust="spacing">gh contributions --all-years</text></g>
 <g class="rise" style="animation-delay:1.52s"><text x="30.0" y="128.0" font-size="26" fill="#7ee787" font-weight="700" textLength="46.8" lengthAdjust="spacing">234</text><text x="30.0" y="148.0" font-size="11" fill="#7d8590" textLength="145.2" lengthAdjust="spacing">all-time contributions</text></g>
 <g class="rise" style="animation-delay:1.60s"><text x="240.0" y="128.0" font-size="26" fill="#7ee787" font-weight="700" textLength="31.2" lengthAdjust="spacing">40</text><text x="240.0" y="148.0" font-size="11" fill="#7d8590" textLength="72.6" lengthAdjust="spacing">active days</text></g>
-<g class="rise" style="animation-delay:1.68s"><text x="30.0" y="184.0" font-size="26" fill="#7ee787" font-weight="700" textLength="31.2" lengthAdjust="spacing">2d</text><text x="30.0" y="204.0" font-size="11" fill="#7d8590" textLength="92.4" lengthAdjust="spacing">current streak</text></g>
+<g class="rise" style="animation-delay:1.68s"><text x="30.0" y="184.0" font-size="26" fill="#7ee787" font-weight="700" textLength="31.2" lengthAdjust="spacing">0d</text><text x="30.0" y="204.0" font-size="11" fill="#7d8590" textLength="92.4" lengthAdjust="spacing">current streak</text></g>
 <g class="rise" style="animation-delay:1.76s"><text x="240.0" y="184.0" font-size="26" fill="#7ee787" font-weight="700" textLength="31.2" lengthAdjust="spacing">4d</text><text x="240.0" y="204.0" font-size="11" fill="#7d8590" textLength="92.4" lengthAdjust="spacing">longest streak</text></g>
 <g class="rise" style="animation-delay:1.84s"><text x="30.0" y="240.0" font-size="26" fill="#7ee787" font-weight="700" textLength="31.2" lengthAdjust="spacing">24</text><text x="30.0" y="260.0" font-size="11" fill="#7d8590" textLength="145.2" lengthAdjust="spacing">best day · Sep 4, 2026</text></g>
 <rect x="30" y="286.0" width="420" height="1" fill="#262c36"/>
@@ -348,7 +348,7 @@
 <rect class="cell" x="347.9" y="353.3" width="5.9" height="5.9" rx="1.2" fill="#0e4429" style="animation-delay:2.905s"><title>1 on 2026-10-05</title></rect>
 <rect class="cell" x="347.9" y="360.6" width="5.9" height="5.9" rx="1.2" fill="#26a641" style="animation-delay:2.905s"><title>18 on 2026-10-06</title></rect>
 <rect class="cell" x="347.9" y="367.9" width="5.9" height="5.9" rx="1.2" fill="#161b22" style="animation-delay:2.905s"><title>0 on 2026-10-07</title></rect>
-<rect class="cell" x="347.9" y="375.2" width="5.9" height="5.9" rx="1.2" fill="none" stroke="#262c36" stroke-width=".8" style="animation-delay:2.905s"/>
+<rect class="cell" x="347.9" y="375.2" width="5.9" height="5.9" rx="1.2" fill="#161b22" style="animation-delay:2.905s"><title>0 on 2026-10-08</title></rect>
 <rect class="cell" x="347.9" y="382.5" width="5.9" height="5.9" rx="1.2" fill="none" stroke="#262c36" stroke-width=".8" style="animation-delay:2.905s"/>
 <rect class="cell" x="347.9" y="389.8" width="5.9" height="5.9" rx="1.2" fill="none" stroke="#262c36" stroke-width=".8" style="animation-delay:2.905s"/>
 <rect class="cell" x="355.1" y="346.0" width="5.9" height="5.9" rx="1.2" fill="none" stroke="#262c36" stroke-width=".8" style="animation-delay:2.927s"/>
@@ -815,7 +815,7 @@
 <rect class="cell" x="435.4" y="488.4" width="5.9" height="5.9" rx="1.2" fill="#161b22" style="animation-delay:4.069s"><title>0 on 2025-12-29</title></rect>
 <rect class="cell" x="435.4" y="495.7" width="5.9" height="5.9" rx="1.2" fill="#161b22" style="animation-delay:4.069s"><title>0 on 2025-12-30</title></rect>
 <rect class="cell" x="435.4" y="503.0" width="5.9" height="5.9" rx="1.2" fill="#161b22" style="animation-delay:4.069s"><title>0 on 2025-12-31</title></rect>
-<g class="in" style="animation-delay:3.82s"><g ><text x="30.0" y="562.1" font-size="11" fill="#3fb950" textLength="13.2" lengthAdjust="spacing">● </text><text x="43.2" y="562.1" font-size="11" fill="#7d8590" textLength="178.2" lengthAdjust="spacing">synced 2026-10-07 02:13 UTC</text></g></g>
+<g class="in" style="animation-delay:3.82s"><g ><text x="30.0" y="562.1" font-size="11" fill="#3fb950" textLength="13.2" lengthAdjust="spacing">● </text><text x="43.2" y="562.1" font-size="11" fill="#7d8590" textLength="178.2" lengthAdjust="spacing">synced 2026-10-08 02:38 UTC</text></g></g>
 <g class="in" style="animation-delay:3.82s"><text x="30.0" y="584.1" font-size="11" fill="#7d8590" textLength="26.4" lengthAdjust="spacing">less</text><rect x="64" y="574.1481481481482" width="12" height="12" rx="2.5" fill="#161b22"/><rect x="80" y="574.1481481481482" width="12" height="12" rx="2.5" fill="#0e4429"/><rect x="96" y="574.1481481481482" width="12" height="12" rx="2.5" fill="#006d32"/><rect x="112" y="574.1481481481482" width="12" height="12" rx="2.5" fill="#26a641"/><rect x="128" y="574.1481481481482" width="12" height="12" rx="2.5" fill="#39d353"/><text x="148.0" y="584.1" font-size="11" fill="#7d8590" textLength="26.4" lengthAdjust="spacing">more</text></g>
   <rect class="sweep" style="--h:672px" y="0" width="480" height="60" fill="url(#beam)"/>
   <rect width="480" height="612" fill="url(#scanlines)"/>
