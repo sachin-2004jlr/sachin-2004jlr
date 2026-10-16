@@ -55,8 +55,8 @@
 <br><br>
 
 <picture>
-  <source media="(max-width: 600px)" srcset="https://raw.githubusercontent.com/sachin-2004jlr/sachin-2004jlr/main/assets/contributions-mobile.svg?v=a93836bdba">
-  <img src="https://raw.githubusercontent.com/sachin-2004jlr/sachin-2004jlr/main/assets/contributions.svg?v=4acebcb15c" width="100%" alt="GitHub contributions per year, refreshed automatically by GitHub Actions.">
+  <source media="(max-width: 600px)" srcset="https://raw.githubusercontent.com/sachin-2004jlr/sachin-2004jlr/main/assets/contributions-mobile.svg?v=a169490429">
+  <img src="https://raw.githubusercontent.com/sachin-2004jlr/sachin-2004jlr/main/assets/contributions.svg?v=2c76bf7ef0" width="100%" alt="GitHub contributions per year, refreshed automatically by GitHub Actions.">
 </picture>
 
 <br><br>
